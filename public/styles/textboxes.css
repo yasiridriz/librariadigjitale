@@ -1,0 +1,172 @@
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    max-width: 350px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    top: 0;
+  }
+  
+  .input__field {
+    position: relative;
+    display: block;
+    float: right;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    -webkit-appearance: none;
+    /* for box shadows to show on iOS */
+  }
+  
+  .input__field:focus {
+    outline: none;
+  }
+  
+  
+  .graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+  }
+  
+  .icon {
+    color: #ddd;
+    font-size: 150%;
+  }
+  
+  .input--nao {
+    overflow: hidden;
+  }
+  
+  .input__field--nao {
+    padding: 0em 0em 0.25em;
+    width: 100%;
+    background: transparent;
+    color: #000;
+    font-size: 2rem;
+  }
+  
+  .graphic--nao {
+    stroke: #ccc;
+    pointer-events: none;
+    -webkit-transition: -webkit-transform 0.7s, stroke 0.7s;
+    transition: transform 0.7s, stroke 0.7s;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+  }
+  
+  .input__field--nao:hover~.graphic--nao {
+    stroke: #ccc;
+  }
+  
+  .input__field--nao:focus~.graphic--nao,
+  .input--filled .graphic--nao {
+    stroke: #fed500;
+    -webkit-transform: translate3d(-66.6%, 0, 0);
+    transform: translate3d(-66.6%, 0, 0);
+  }
+  
+  .group {
+    position: relative;
+    width: 350px;
+    max-width: 350px;
+    padding: 1em;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .input-default {
+    background: inherit;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1.3rem;
+    padding: .5em;
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    width: 350px;
+  }
+ 
+  
+  .input-default:focus {
+    border: 1px solid #fed500;
+  }
+  
+  .group label {
+    position: absolute;
+    left: 2em;
+    top: .2em;
+    padding: 2px;
+    color: #888;
+    background: white;
+  }
+  
+  .form-box {
+    position: relative;
+    background: #fff;
+    font-family: 'PT Serif', serif;
+    width: 100%;
+  
+  }
+  
+  .form-box .btn-default {
+    right: 0;
+    position: absolute;
+    bottom: 5px;
+  }
+  
+  .input-container {
+    margin: .2em auto;
+    max-width: 100%;
+    display: block;
+    background-color: #fff;
+    border-radius: .3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    cursor: default;
+  }
+  
+  input[type='file'] {
+    display: none;
+  }
+  
+  .file-info {
+    font-size: 0.9em;
+    overflow: auto;
+  }
+  
+  .browse-btn {
+    background: #ccc;
+    color: #000;
+    min-height: 35px;
+    padding: 0 .8rem;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border: none;
+    font-size: 1.4rem;
+  }
+  
+  .browse-btn:hover {
+    background: #fed500;
+  }
+  
+  @media (max-width: 300px) {
+    button {
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 0;
+    }
+  
+    .file-info {
+      display: block;
+      margin: 10px 5px;
+    }
+  }

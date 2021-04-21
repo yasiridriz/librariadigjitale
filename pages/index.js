@@ -1,65 +1,55 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-export default function Home() {
+const titleVariants = {
+  initial: { scale: 1.07, opacity: 0 },
+  enter: { scale: 1, opacity: 1, transition: { duration: .5, ease: [0.48, 0.15, 0.25, 0.96], when: "beforeChildren", staggerChildren: .035 } },
+  exit: {
+      x: 0,
+      opacity: 0,
+      transition: { duration: 0.3, ease: [0.48, 0.15, 0.25, 0.96], staggerChildren: .02 }
+  }
+};
+const contentVariants = {
+  initial: { scale: 1, y: 60, opacity: 0 },
+  enter: { scale: 1, y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] } },
+  exit: {
+      x: 0,
+      opacity: 0,
+      transition: { duration: 0.25, ease: [0.48, 0.15, 0.25, 0.96] }
+  },
+}
+
+const Home = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+    <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
+      <motion.div variants={contentVariants} className="landing container" className="box">
+        <h1>
+          Mirëseerdhët në <br />Librarinë Digjitale
+          <p>
+            Burimi më i madh i librave digjitale në gjuhën Shqipe.
             </p>
+        </h1>
+      </motion.div>
+      <motion.div variants={contentVariants} className="box latestbooks">
+        <h1 className="title"> Librat e Fundit: </h1>
+        <p style={{ textAlign: "right" }}><Link href="/books"><a> Shih të gjitha <span className="shift">&rarr;</span></a></Link></p>
+        <div className="row">
+          <a className=" lates book-tile" ng-repeat="book in books" href="/books/details/{{ book._id }}">
+            <img ng-src="{{ book.piclink }}" />
+            <div className="book-details">
+              <h3></h3>
+              <p>
+                (Author)
+                    </p>
+              <div className="book-description">
+              </div>
+            </div>
           </a>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
+
+export default Home;
