@@ -46,7 +46,7 @@ const Contact = () => {
 
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="box">
-            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="title">Get in touch</motion.h1>
+            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="title">Kontakti</motion.h1>
             <motion.p variants={contentVariants}>
                 Nëse keni ndonjë ankesë apo kërkesë në lidhje me uebsajtin, na dërgoni një mesazh në adresën <a
                     href="mailto:feedback@librariadigjitale.gq">feedback@librariadigjitale.co</a>, apo dërgoni prej formularit në vijim:
@@ -57,21 +57,21 @@ const Contact = () => {
                         <div className="group">
                             <input type="text" value={name}
                                 onChange={e => setName(e.target.value)} className="input-default" required />
-                            <label>Full Name</label>
+                            <label>Emri & Mbiemri</label>
                         </div>
                         <div className="group">
                             <input type="email" value={email}
                                 onChange={e => setEmail(e.target.value)} className="input-default" required />
-                            <label>Email</label>
+                            <label>Email Adresa</label>
                         </div>
                         <div className="group">
                             <textarea value={message} rows="4"
                                 onChange={e => setMessage(e.target.value)} className="input-default" required></textarea>
-                            <label>Message</label>
+                            <label>Mesazhi</label>
                         </div>
                         <div className="group">
                             <button type="submit" className="btn-main" >
-                                Send <span class="far fa-paper-plane"></span>
+                                Dërgo <span class="far fa-paper-plane"></span>
                             </button>
                         </div>
                     </form>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Argent CF';
+    src: local('Argent CF Thin'), local('Argent-CF-Thin'),
+        url('ArgentCF-Thin.woff2') format('woff2'),
+        url('ArgentCF-Thin.woff') format('woff'),
+        url('ArgentCF-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
