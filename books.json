@@ -2,52 +2,42 @@
     {
         "gallery": "https://postimg.cc/gallery/LmGdfQR",
         "id": "1",
-        "title": "Anna Karenina",
-        "author": "Leo Tolstoy",
-        "image": "https://i.postimg.cc/VkNHq3jP/Anna-Karenina.jpg",
+        "verified": 1,
+        "title": "Bagëti dhe Bujqësia",
+        "author": "Naim Frashëri",
+        "link": "/books/BagëtidheBujqësia-NaimFrashëri.pdf",
+        "image": "https://i.postimg.cc/1t3g4nxW/Bageti-Dhe-Bujqesia-Naim-Frasheri.png",
         "publisher": "",
-        "description": "Anna Karenina (Анна Каренина), e njohur edhe me emrin Ana Karenin, është një ndër novelat më të njohura ruse e shkruar nga Leo Tolstoy gjatë viteve 1873 deri më 1877. Në këtë vepër trajton stilin realist, duke treguar për familjet aristokrate në Rusi në atë kohë. Personazhi Ana Karenina është inspiruar nga vajza e Aleksandër Pushkinit, Maria Hartungu."
+        "description": "Poema 'Bagëtia e bujqësia' u botua më 1886. Është një nga veprat më të bukura e më të frymëzuara jo vetëm të Naimit, por edhe të krejt letërsisë së Rilindjes. Askush para Naimit nuk i kishte kënduar dashurisë e mallit për atdhe, krenarisë kombëtare dhe bukurisë së natyrës shqiptare me një pasion aq të zjarrtë e me një gjuhë poetike aq të ëmbël e të bukur. Me këtë poemë Naimi krijoi poezinë e madhe të Atdheut e të natyrës shqiptare. Kjo vepër jo vetëm u bë e dashur për bashkatdhetarët, por krijoi një traditë të pasur edhe për poetët që erdhën më pas."
     },
-    
     {
         "id": "2",
-        "title": "Arti i Luftës",
-        "author": "Sun Tzu",
-        "image": "https://i.postimg.cc/G3kNdPcV/Artii-Luftes.jpg",
+        "verified": 1,
+        "title": "Kangët e Mjerimit",
+        "author": "Migjeni",
+        "link": "/books/KangëteMjerimit-Migjeni.pdf",
+        "image": "https://i.postimg.cc/DZPtp08K/Kanget-EMjerimit-Migjeni.png",
         "publisher": "",
-        "description": "Kush e solli Doruntinën është një roman nga Ismail Kadare në fund të viteve 70ta dhe i botuar për herë të parë në vitin 1980 në përmbledhjen me titull 'Gjakftohtësia'. Romani bazohet mbi baladën e Konstantinit dhe Doruntinës."
+        "description": "Në “Poemën e mjerimit”, veprën e tij më të shquar, Migjeni përshkroi në tablo të gjallë dhe rrëngjethëse të gëlltitjes së vështirë të masave të shtypura dhe të shfrytëzuara, të venitjes së tyre fizike nën grushtin e mjerimit, që sundonte në vend dhe mbrohej nga monarkia çifligaro-borgjeze. Migjeni tregon haptazi se cdo të thotë të jesh në skamje. Ai përdor figurën e metaforës dhe epitet për të shprehur këtë mjerim. Shohim që e përshkruan me këto fjalë -> Ftyra të zbehta, sy të jeshilta, të shikojnë si hije, duert të mpita, me zhele, të shëmtueme, të ndyta, të verdha."
     },
     {
         "id": "3",
-        "title": "1984",
-        "author": "George Orwell",
-        "image": "https://i.postimg.cc/vB5P8Mdf/1984.png",
+        "verified": 1,
+        "title": "Gjakftohtësia",
+        "author": "Ismail Kadare",
+        "link": "/books/Gjakftohtësia-IsmailKadare.pdf",
+        "image": "https://i.postimg.cc/t49DDkF7/Gjakftohtesia.png",
         "publisher": "",
-        "description": "1984 (angl. Nineteen Eighty-Four) është një novele e publikuar ne vitin 1949 nga shkrimtari Xhorxh Oruell. Novela bën fjale për një bote distopike, ku ngjarjet zhvillohen ne një te ardhme imagjinare ne Airstrip One (qe njihet ne te shkuarën ne libër si Britania e Madhe), një province e supershtetit Oceania (Oqeania). Ne këtë libër, bota përshkruhet ne lufte te vazhdueshme, ku Partia ne fuqi është ne kontroll te çdo gjeje, dhe duke përdorur teknologji te avancuar arrijnë te kontrollojnë te gjitha lëvizjet e qytetareve ne mënyre qe te mbajnë gjithçka nen kontroll dhe te jene gjithmonë ne fuqi."
+        "description": "'Gjakftohtësia' është një nga romanet më të njohura të autorit me famë botërore Ismail Kadare. Novelat e shkurtra e bëjnë këtë vepër të bukur dhe domethënëse. Përmes shkrimit të tij autori trajton problemet e rëndësishme të historisë shqiptare si dhe të gjithë popullit tonë. Novela Historia është një nga novelat kryesore që shfaq shqetësimet e autorit."
     },
     {
         "id": "4",
-        "title": "Ferma e Kafshëve",
-        "author": "George Orwell",
-        "image": "https://i.postimg.cc/zv5xVMJM/Animal-Farm.jpg",
+        "verified": 1,
+        "title": "Oxhaku",
+        "author": "Mihal Grameno",
+        "link": "/books/Oxhaku-MihalGrameno.pdf",
+        "image": "https://i.postimg.cc/1XxrFr9m/Oxhaku.png",
         "publisher": "",
-        "description": "Kush e solli Doruntinën është një roman nga Ismail Kadare në fund të viteve 70ta dhe i botuar për herë të parë në vitin 1980 në përmbledhjen me titull 'Gjakftohtësia'. Romani bazohet mbi baladën e Konstantinit dhe Doruntinës."
-    },
-    {
-        "id": "5",
-        "title": "Krenari dhe Paragjykim",
-        "author": "Jane Austen",
-        "image": "https://i.postimg.cc/xT661tBx/Krenari-Dhe-Paragjykim.png",
-        "publisher": "",
-        "description": "Kush e solli Doruntinën është një roman nga Ismail Kadare në fund të viteve 70ta dhe i botuar për herë të parë në vitin 1980 në përmbledhjen me titull 'Gjakftohtësia'. Romani bazohet mbi baladën e Konstantinit dhe Doruntinës."
-    },
-    {
-        "id": "7",
-        "title": "Kush e Solli Doruntinën",
-        "author": "Ismail Kadare",
-        "image": "https://i.postimg.cc/4ybFPGLs/kush-e-solli-doruntinen.jpg",
-        "publisher": "",
-        "description": "Kush e solli Doruntinën është një roman nga Ismail Kadare në fund të viteve 70ta dhe i botuar për herë të parë në vitin 1980 në përmbledhjen me titull 'Gjakftohtësia'. Romani bazohet mbi baladën e Konstantinit dhe Doruntinës."
+        "description": "'Gjakftohtësia' është një nga romanet më të njohura të autorit me famë botërore Ismail Kadare. Novelat e shkurtra e bëjnë këtë vepër të bukur dhe domethënëse. Përmes shkrimit të tij autori trajton problemet e rëndësishme të historisë shqiptare si dhe të gjithë popullit tonë. Novela Historia është një nga novelat kryesore që shfaq shqetësimet e autorit."
     }
-    
 ]

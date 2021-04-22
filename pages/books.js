@@ -65,9 +65,11 @@ function ExpandedBook({ book, onCollapse }) {
                                                 <p>
                                                     {book.description}
                                                 </p>
-                                                <button className="btn-main" >
-                                                    Lexo
-                                                </button>
+                                                <hr />
+                                                <br />
+                                                <a target="_blank" href={book.link} className="btn-main noborder" >
+                                                    Lexo 
+                                                </a>
                                             </motion.div>
                                         </motion.div>
                                     </div>

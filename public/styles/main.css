@@ -74,7 +74,7 @@ a.noborder {
 }
 
 a.noborder:hover {
-    background: none;
+    background-size: 0;
 }
 
 a .shift {
@@ -269,7 +269,7 @@ h3 {
 }
 
 .btn-main:hover {
-    background-color: #f1c900;
+    background: #f1c900;
     outline: none;
 
 }
