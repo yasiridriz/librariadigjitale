@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
+import books from '../books.json';
+
+const imageLoader = ({ src, quality }) => {
+    return `${src}?q=${quality || 75}`;
+}
 
 const titleVariants = {
     initial: { scale: 1.07, opacity: 0 },
@@ -52,7 +58,7 @@ function ExpandedBook({ book, onCollapse }) {
                                 <div className="row">
                                     <div className="col-md-4">
                                         <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                                            <img src={book.image} />
+                                            <Image layout="fill" layoutId={`image-${book.id}`} src={book.image} />
                                         </motion.div>
                                     </div>
                                     <div className="col-md-8">
@@ -87,7 +93,7 @@ function CompactBook({ book, onExpand, disabled }) {
             <motion.div className="bookContainer" layoutId={`bookContainer`} variants={bookVariants}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                        <img src={book.image} />
+                        <Image layout="fill" layoutId={`image-${book.id}`} src={book.image} />
                     </motion.div>
                     <motion.div layoutId={`details-${book.id}`} className="details">
                         <h2>{book.title}</h2>
@@ -125,28 +131,6 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
 }
 
 const Books = () => {
-    const books =
-        [{
-            "id": "1",
-            "title": "Anna Karenina",
-            "author": "Leo Tolstoy",
-            "image": "https://i.postimg.cc/bJ1wrh7h/image.jpg",
-            "description": "Anna Karenina (Анна Каренина), e njohur edhe me emrin Ana Karenin, është një ndër novelat më të njohura ruse e shkruar nga Leo Tolstoy gjatë viteve 1873 deri më 1877. Në këtë vepër trajton stilin realist, duke treguar për familjet aristokrate në Rusi në atë kohë. Personazhi Ana Karenina është inspiruar nga vajza e Aleksandër Pushkinit, Maria Hartungu."
-        },
-        {
-            "id": "2",
-            "title": "1984",
-            "author": "George Orwell",
-            "image": "https://images-na.ssl-images-amazon.com/images/I/91SZSW8qSsL.jpg",
-            "description": "1984 (angl. Nineteen Eighty-Four) është një novele e publikuar ne vitin 1949 nga shkrimtari Xhorxh Oruell. Novela bën fjale për një bote distopike, ku ngjarjet zhvillohen ne një te ardhme imagjinare ne Airstrip One (qe njihet ne te shkuarën ne libër si Britania e Madhe), një province e supershtetit Oceania (Oqeania). Ne këtë libër, bota përshkruhet ne lufte te vazhdueshme, ku Partia ne fuqi është ne kontroll te çdo gjeje, dhe duke përdorur teknologji te avancuar arrijnë te kontrollojnë te gjitha lëvizjet e qytetareve ne mënyre qe te mbajnë gjithçka nen kontroll dhe te jene gjithmonë ne fuqi."
-        },
-        {
-            "id": "3",
-            "title": "Kush e Solli Doruntinën",
-            "author": "Ismail Kadare",
-            "image": "https://b3c4r2f7.stackpathcdn.com/9131-large_default/kush-e-solli-doruntinen.jpg",
-            "description": "Kush e solli Doruntinën është një roman nga Ismail Kadare në fund të viteve 70ta dhe i botuar për herë të parë në vitin 1980 në përmbledhjen me titull 'Gjakftohtësia'. Romani bazohet mbi baladën e Konstantinit dhe Doruntinës."
-        }]
     const [expandedBook, setCollapsedBook] = useState();
 
     return (
@@ -171,4 +155,3 @@ const Books = () => {
 }
 
 export default Books;
-

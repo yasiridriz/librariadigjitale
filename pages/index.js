@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Router from 'next/router';
+import books from '../books.json';
 
 const titleVariants = {
   initial: { scale: 1.07, opacity: 0 },
@@ -22,28 +23,6 @@ const contentVariants = {
 }
 
 const Home = () => {
-  const books =
-    [{
-      "id": "1",
-      "title": "Anna Karenina",
-      "author": "Leo Tolstoy",
-      "image": "https://i.postimg.cc/bJ1wrh7h/image.jpg",
-      "description": "Anna Karenina (Анна Каренина), e njohur edhe me emrin Ana Karenin, është një ndër novelat më të njohura ruse e shkruar nga Leo Tolstoy gjatë viteve 1873 deri më 1877. Në këtë vepër trajton stilin realist, duke treguar për familjet aristokrate në Rusi në atë kohë. Personazhi Ana Karenina është inspiruar nga vajza e Aleksandër Pushkinit, Maria Hartungu."
-    },
-    {
-      "id": "2",
-      "title": "1984",
-      "author": "George Orwell",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/91SZSW8qSsL.jpg",
-      "description": "1984 (angl. Nineteen Eighty-Four) është një novele e publikuar ne vitin 1949 nga shkrimtari Xhorxh Oruell. Novela bën fjale për një bote distopike, ku ngjarjet zhvillohen ne një te ardhme imagjinare ne Airstrip One (qe njihet ne te shkuarën ne libër si Britania e Madhe), një province e supershtetit Oceania (Oqeania). Ne këtë libër, bota përshkruhet ne lufte te vazhdueshme, ku Partia ne fuqi është ne kontroll te çdo gjeje, dhe duke përdorur teknologji te avancuar arrijnë te kontrollojnë te gjitha lëvizjet e qytetareve ne mënyre qe te mbajnë gjithçka nen kontroll dhe te jene gjithmonë ne fuqi."
-    },
-    {
-      "id": "3",
-      "title": "Kush e Solli Doruntinën",
-      "author": "Ismail Kadare",
-      "image": "https://b3c4r2f7.stackpathcdn.com/9131-large_default/kush-e-solli-doruntinen.jpg",
-      "description": "Kush e solli Doruntinën është një roman nga Ismail Kadare në fund të viteve 70ta dhe i botuar për herë të parë në vitin 1980 në përmbledhjen me titull 'Gjakftohtësia'. Romani bazohet mbi baladën e Konstantinit dhe Doruntinës."
-    }]
   return (
     <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
       <motion.div variants={contentVariants} className="landing container" className="box">
