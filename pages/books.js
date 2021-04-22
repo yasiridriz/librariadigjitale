@@ -2,12 +2,7 @@ import { useState } from 'react';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Image from 'next/image';
 import books from '../books.json';
-
-const imageLoader = ({ src, quality }) => {
-    return `${src}?q=${quality || 75}`;
-}
 
 const titleVariants = {
     initial: { scale: 1.07, opacity: 0 },
@@ -58,7 +53,7 @@ function ExpandedBook({ book, onCollapse }) {
                                 <div className="row">
                                     <div className="col-md-4">
                                         <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                                            <Image layout="fill" layoutId={`image-${book.id}`} src={book.image} />
+                                            <img layoutId={`image-${book.id}`} src={book.image} />
                                         </motion.div>
                                     </div>
                                     <div className="col-md-8">
@@ -93,7 +88,7 @@ function CompactBook({ book, onExpand, disabled }) {
             <motion.div className="bookContainer" layoutId={`bookContainer`} variants={bookVariants}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                        <Image layout="fill" layoutId={`image-${book.id}`} src={book.image} />
+                        <img layoutId={`image-${book.id}`} src={book.image} />
                     </motion.div>
                     <motion.div layoutId={`details-${book.id}`} className="details">
                         <h2>{book.title}</h2>

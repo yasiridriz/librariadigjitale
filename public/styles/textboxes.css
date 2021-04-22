@@ -74,7 +74,6 @@
   
   .group {
     position: relative;
-    width: 350px;
     max-width: 350px;
     padding: 1em;
     margin: 0 auto;
@@ -89,7 +88,7 @@
     padding: .5em;
     font-family: 'PT Serif', serif;
     font-weight: 400;
-    width: 350px;
+    width: 100%;
   }
  
   
@@ -159,6 +158,9 @@
   }
   
   @media (max-width: 300px) {
+    .input-default {
+      width: 30%;
+    }
     button {
       width: 100%;
       border-top-right-radius: 5px;
