@@ -30,7 +30,7 @@ const Home = () => {
           Mirëseerdhët në <br />Librarinë Digjitale
           <p>
             Burimi më i madh i librave digjitale në gjuhën Shqipe.
-            </p>
+          </p>
         </h1>
       </motion.div>
       <motion.div variants={contentVariants} className="box latestbooks">

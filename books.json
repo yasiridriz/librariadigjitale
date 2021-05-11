@@ -3,41 +3,21 @@
         "gallery": "https://postimg.cc/gallery/LmGdfQR",
         "id": "1",
         "verified": 1,
-        "title": "Bagëti dhe Bujqësia",
-        "author": "Naim Frashëri",
-        "link": "/books/BagëtidheBujqësia-NaimFrashëri.pdf",
-        "image": "https://i.postimg.cc/1t3g4nxW/Bageti-Dhe-Bujqesia-Naim-Frasheri.png",
+        "title": "Prilli i thyer",
+        "author": "Ismail Kadare",
+        "link": "/read/PrilliiThyer.pdf",
+        "image": "https://i.postimg.cc/DyB71pZP/Cover.png",
         "publisher": "",
-        "description": "Poema 'Bagëtia e bujqësia' u botua më 1886. Është një nga veprat më të bukura e më të frymëzuara jo vetëm të Naimit, por edhe të krejt letërsisë së Rilindjes. Askush para Naimit nuk i kishte kënduar dashurisë e mallit për atdhe, krenarisë kombëtare dhe bukurisë së natyrës shqiptare me një pasion aq të zjarrtë e me një gjuhë poetike aq të ëmbël e të bukur. Me këtë poemë Naimi krijoi poezinë e madhe të Atdheut e të natyrës shqiptare. Kjo vepër jo vetëm u bë e dashur për bashkatdhetarët, por krijoi një traditë të pasur edhe për poetët që erdhën më pas."
+        "description": "Ky roman fillon me personazhin kryesor Gjorgun që ka zënë pritë dhe pret hasmin të shfaqet për t'ia marrë gjakun vëllait. Pas marrjes së gjakut jeta e tij hyn në një periudhë të re kur ai është i shënjuar për tu vrarë nga famijla me të cilën ishin në gjak. Romani i kushtohet bredhjeve të personazhit kryesor nëpër bjeshkë për t'i kryer detyrimet dhe për t'i gëzuar ditët e mbetura të lirisë para se të mbyllej sipas traditës në kullën e ngujimit. \n Paralel me këtë linjë, jepet linja tjetër, e ardhjes së një çifti të porsamartuar nga kryeqyteti për ta kaluar muajin e mjaltit në Rrafsh."
     },
     {
         "id": "2",
         "verified": 1,
-        "title": "Kangët e Mjerimit",
-        "author": "Migjeni",
-        "link": "/books/KangëteMjerimit-Migjeni.pdf",
-        "image": "https://i.postimg.cc/DZPtp08K/Kanget-EMjerimit-Migjeni.png",
-        "publisher": "",
-        "description": "Në “Poemën e mjerimit”, veprën e tij më të shquar, Migjeni përshkroi në tablo të gjallë dhe rrëngjethëse të gëlltitjes së vështirë të masave të shtypura dhe të shfrytëzuara, të venitjes së tyre fizike nën grushtin e mjerimit, që sundonte në vend dhe mbrohej nga monarkia çifligaro-borgjeze. Migjeni tregon haptazi se cdo të thotë të jesh në skamje. Ai përdor figurën e metaforës dhe epitet për të shprehur këtë mjerim. Shohim që e përshkruan me këto fjalë -> Ftyra të zbehta, sy të jeshilta, të shikojnë si hije, duert të mpita, me zhele, të shëmtueme, të ndyta, të verdha."
-    },
-    {
-        "id": "3",
-        "verified": 1,
-        "title": "Gjakftohtësia",
+        "title": "Nëpunësi i Pallatit të Ëndrrave",
         "author": "Ismail Kadare",
-        "link": "/books/Gjakftohtësia-IsmailKadare.pdf",
-        "image": "https://i.postimg.cc/t49DDkF7/Gjakftohtesia.png",
+        "link": "/read/NepunesiiPallatitteEndrrave.pdf",
+        "image": "https://i.postimg.cc/L5V2CNVR/N-pun-si-i-Pallatit-t-ndrrave.png",
         "publisher": "",
-        "description": "'Gjakftohtësia' është një nga romanet më të njohura të autorit me famë botërore Ismail Kadare. Novelat e shkurtra e bëjnë këtë vepër të bukur dhe domethënëse. Përmes shkrimit të tij autori trajton problemet e rëndësishme të historisë shqiptare si dhe të gjithë popullit tonë. Novela Historia është një nga novelat kryesore që shfaq shqetësimet e autorit."
-    },
-    {
-        "id": "4",
-        "verified": 1,
-        "title": "Oxhaku",
-        "author": "Mihal Grameno",
-        "link": "/books/Oxhaku-MihalGrameno.pdf",
-        "image": "https://i.postimg.cc/1XxrFr9m/Oxhaku.png",
-        "publisher": "",
-        "description": "Mihal Grameno (Korçë, 13 janar 1871 - 5 shkurt 1931) ka qenë veprimtar i çështjes kombëtare, luftëtar me çetën e Çerçiz Topullit, botues dhe shkrimtar shqiptar. Vlerësohet se vendi i Gramenos në letërsinë shqiptare është kryesisht si publicist e pamfletist i jetës politike."
+        "description": "Eshtë roman që sipërfaqësisht sulmon Perandorinë Osmane, por godet çdo sistem totalitar që provon të ushtrojë pushtet absolut mbi individin. Romani bën fjalë për një shtet totalitar që në shikim të parë duket si Perandoria Osmane, ku ekziston një institucion shtetëror i quajtur Tabir Saraj (Pallati i Ëndrrave), qëllimi i të cilit është mbledhja e ëndrrave të qytetarëve, shqyrtimi dhe interpretimi i tyre me qëllim të gjetjes së shenjave të rebelimit ndaj shtetit ose paralajmërimeve për fatkeqësi."
     }
 ]
