@@ -18,6 +18,26 @@
         "link": "/read/NepunesiiPallatitteEndrrave.pdf",
         "image": "https://i.postimg.cc/L5V2CNVR/N-pun-si-i-Pallatit-t-ndrrave.png",
         "publisher": "",
-        "description": "Eshtë roman që sipërfaqësisht sulmon Perandorinë Osmane, por godet çdo sistem totalitar që provon të ushtrojë pushtet absolut mbi individin. Romani bën fjalë për një shtet totalitar që në shikim të parë duket si Perandoria Osmane, ku ekziston një institucion shtetëror i quajtur Tabir Saraj (Pallati i Ëndrrave), qëllimi i të cilit është mbledhja e ëndrrave të qytetarëve, shqyrtimi dhe interpretimi i tyre me qëllim të gjetjes së shenjave të rebelimit ndaj shtetit ose paralajmërimeve për fatkeqësi."
+        "description": "Është roman që sipërfaqësisht sulmon Perandorinë Osmane, por godet çdo sistem totalitar që provon të ushtrojë pushtet absolut mbi individin. Romani bën fjalë për një shtet totalitar që në shikim të parë duket si Perandoria Osmane, ku ekziston një institucion shtetëror i quajtur Tabir Saraj (Pallati i Ëndrrave), qëllimi i të cilit është mbledhja e ëndrrave të qytetarëve, shqyrtimi dhe interpretimi i tyre me qëllim të gjetjes së shenjave të rebelimit ndaj shtetit ose paralajmërimeve për fatkeqësi."
+    },
+    {
+        "id": "3",
+        "verified": 1,
+        "title": "Alkimisti",
+        "author": "Paulo Coelho",
+        "link": "/read/P-Coelho-Alkimisti.pdf",
+        "image": "https://i.postimg.cc/L8dD5ngY/Alkimisti.png",
+        "publisher": "",
+        "description": "Alkimisti është një roman i shkruar nga autori brazilian Paulo Coelho, i cili u botua për herë të parë më 1988. Libri është përkthyer në shumë gjuhë si dhe është një nga librat më të shitur në botë. Duke qenë një roman alegorik, Alkimisti ndjek një bari të ri nga Andaluzia në udhëtimin e tij drejt piramidave të Egjiptit, pasi rregullisht ai kishte parë një ëndërr se do të gjente atje një thesar."
+    },
+    {
+        "id": "4",
+        "verified": 1,
+        "title": "Kryqëzatat në syrin e Arabëve",
+        "author": "Amin Maalouf",
+        "link": "https://www.logos-a.com/online/book/94/read",
+        "image": "https://i.postimg.cc/KzVtL9fN/Kryqezatat-Ne-Syrin-EArabeve.png",
+        "publisher": "logos-a.com",
+        "description": "Ideja themelore e këtij libri është e thjeshtë: rrëfimi i historisë së kryqëzatave ashtu siç është parë, përjetuar dhe mbajtur shënim në “anën tjetër” - në kampin arab. Përmbajtja bazohet pothuajse ekskluzivisht mbi dëshmitë e historianëve dhe kronistëve arabë të asaj epoke. Një libër që ndihmon të kuptohen kryqëzatat gjatë dy shekujve të trazuar, të cilët i dhanë formë Perëndimit dhe botës arabe pa dallim, madje ndikojnë në marrëdhëniet ndërmjet tyre deri në ditët e sotme."
     }
 ]

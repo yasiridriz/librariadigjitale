@@ -68,7 +68,7 @@ function ExpandedBook({ book, onCollapse }) {
                                                 <hr />
                                                 <br />
                                                 <a target="_blank" href={book.link} className="btn-main noborder" >
-                                                    Lexo 
+                                                    Lexo {book.publisher !== "" ? `në ${book.publisher}` : ""}
                                                 </a>
                                             </motion.div>
                                         </motion.div>
@@ -86,7 +86,7 @@ function ExpandedBook({ book, onCollapse }) {
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <motion.div variants={contentVariants} className="col-md-4" onClick={disabled ? undefined : onExpand} style={{"margin-bottom":"2em"}}>
+        <motion.div variants={contentVariants} className="col-md-4" onClick={disabled ? undefined : onExpand} style={{ "margin-bottom": "2em" }}>
             <motion.div className="bookContainer" layoutId={`bookContainer`} variants={bookVariants}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
@@ -129,12 +129,42 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
 
 const Books = () => {
     const [expandedBook, setCollapsedBook] = useState();
+    const [search, setSearch] = useState("");
+    let tokens = search
+        .toLowerCase()
+        .split(' ')
+        .filter(function (token) {
+            return token.trim() !== '';
+        });
+    var searchTermRegex = new RegExp(tokens.join(`|`), `gim`);
+    var filteredList = books.filter(function (book) {
+        var searchString = '';
+        for (var key in book) {
+            if (book.hasOwnProperty(key) && book[key] !== '') {
+                searchString += book[key].toString().toLowerCase().trim() + ' ';
+            }
+        }
+        return searchString.match(searchTermRegex);
+
+    })
+
 
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
             <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Librat</span></motion.h1>
+            <motion.div variants={titleVariants} className="search">
+                <span className="input input--nao">
+                    <input className="input__field input__field--nao" type="text" value={search} onChange={e => setSearch(e.target.value)} id="input-1" placeholder="Kërko" />
+                    <svg className="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                        preserveAspectRatio="none">
+                        <path
+                            d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+                    </svg>
+                </span>
+            </motion.div>
+
             <div className="row">
-                {books.map(book => (
+                {filteredList.map(book => (
                     <Book
                         key={book}
                         book={book}

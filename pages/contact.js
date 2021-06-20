@@ -62,7 +62,7 @@ const Contact = () => {
                         <div className="group">
                             <input type="email" value={email}
                                 onChange={e => setEmail(e.target.value)} className="input-default" required />
-                            <label>Email Adresa</label>
+                            <label>Email</label>
                         </div>
                         <div className="group">
                             <textarea value={message} rows="4"
