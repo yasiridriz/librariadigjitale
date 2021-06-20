@@ -153,14 +153,37 @@ const Books = () => {
         <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
             <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Librat</span></motion.h1>
             <motion.div variants={titleVariants} className="search">
-                <span className="input input--nao">
-                    <input className="input__field input__field--nao" type="text" value={search} onChange={e => setSearch(e.target.value)} id="input-1" placeholder="Kërko" />
-                    <svg className="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
-                        preserveAspectRatio="none">
-                        <path
-                            d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
-                    </svg>
-                </span>
+                <div className="row">
+                    <div className="col-md-6">
+                        <span className="input input--nao">
+                            <input className="input__field input__field--nao" type="text" value={search} onChange={e => setSearch(e.target.value)} id="input-1" placeholder="Kërko" />
+                            <svg className="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                                preserveAspectRatio="none">
+                                <path
+                                    d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+                            </svg>
+                        </span>
+                    </div>
+                    {/* <div className="col-md-6">
+                        <div className="categories">
+                            <ul>
+                                <li>
+                                    <button className="btn-second">Klasika</button>
+                                </li>
+                                <li>
+                                    <button className="btn-second">Poezi</button>
+                                </li>
+                                <li>
+                                    <button className="btn-second">Trillim</button>
+                                </li>
+                                <li>
+                                    <button className="btn-second">Histori</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> */}
+                </div>
+
             </motion.div>
 
             <div className="row">

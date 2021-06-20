@@ -6,19 +6,27 @@
         "title": "Prilli i thyer",
         "author": "Ismail Kadare",
         "link": "/read/PrilliiThyer.pdf",
+        "categories": [
+            "Roman",
+            "Artistike"
+        ],
         "image": "https://i.postimg.cc/DyB71pZP/Cover.png",
         "publisher": "",
         "description": "Ky roman fillon me personazhin kryesor Gjorgun që ka zënë pritë dhe pret hasmin të shfaqet për t'ia marrë gjakun vëllait. Pas marrjes së gjakut jeta e tij hyn në një periudhë të re kur ai është i shënjuar për tu vrarë nga famijla me të cilën ishin në gjak. Romani i kushtohet bredhjeve të personazhit kryesor nëpër bjeshkë për t'i kryer detyrimet dhe për t'i gëzuar ditët e mbetura të lirisë para se të mbyllej sipas traditës në kullën e ngujimit. \n Paralel me këtë linjë, jepet linja tjetër, e ardhjes së një çifti të porsamartuar nga kryeqyteti për ta kaluar muajin e mjaltit në Rrafsh."
     },
     {
-        "id": "2",
+        "id": "7",
         "verified": 1,
-        "title": "Nëpunësi i Pallatit të Ëndrrave",
-        "author": "Ismail Kadare",
-        "link": "/read/NepunesiiPallatitteEndrrave.pdf",
-        "image": "https://i.postimg.cc/L5V2CNVR/N-pun-si-i-Pallatit-t-ndrrave.png",
+        "title": "Kodi Da Vinçi",
+        "author": "Dan Brown",
+        "link": "/read/DanBrown-KodiiDaVincit.pdf",
+        "categories": [
+            "Roman",
+            "Artistike"
+        ],
+        "image": "https://i.postimg.cc/jdM9k1KX/Kodi-Da-Vinci.png",
         "publisher": "",
-        "description": "Është roman që sipërfaqësisht sulmon Perandorinë Osmane, por godet çdo sistem totalitar që provon të ushtrojë pushtet absolut mbi individin. Romani bën fjalë për një shtet totalitar që në shikim të parë duket si Perandoria Osmane, ku ekziston një institucion shtetëror i quajtur Tabir Saraj (Pallati i Ëndrrave), qëllimi i të cilit është mbledhja e ëndrrave të qytetarëve, shqyrtimi dhe interpretimi i tyre me qëllim të gjetjes së shenjave të rebelimit ndaj shtetit ose paralajmërimeve për fatkeqësi."
+        "description": "Një kod gjenial i fshehur në veprat e Leonardo Da Vinçit. Një vrap i dëshpëruar nëpër katedralet dhe kështjellat e Europës. Një e vërtetë që të lë gojëhapur fshehur në shekuj. Më në fund zbulohet. Sipas miliona lexuesve në mbarë botën leximi i Kodit të Da Vinçit është një përvojë krejt ndryshe nga të tjerat."
     },
     {
         "id": "3",
@@ -26,6 +34,11 @@
         "title": "Alkimisti",
         "author": "Paulo Coelho",
         "link": "/read/P-Coelho-Alkimisti.pdf",
+        "categories": [
+            "Roman",
+            "Artistike",
+            "Per te rinjte"
+        ],
         "image": "https://i.postimg.cc/L8dD5ngY/Alkimisti.png",
         "publisher": "",
         "description": "Alkimisti është një roman i shkruar nga autori brazilian Paulo Coelho, i cili u botua për herë të parë më 1988. Libri është përkthyer në shumë gjuhë si dhe është një nga librat më të shitur në botë. Duke qenë një roman alegorik, Alkimisti ndjek një bari të ri nga Andaluzia në udhëtimin e tij drejt piramidave të Egjiptit, pasi rregullisht ai kishte parë një ëndërr se do të gjente atje një thesar."
@@ -36,8 +49,56 @@
         "title": "Kryqëzatat në syrin e Arabëve",
         "author": "Amin Maalouf",
         "link": "https://www.logos-a.com/online/book/94/read",
+        "categories": [
+            "Roman",
+            "Histori"
+        ],
         "image": "https://i.postimg.cc/KzVtL9fN/Kryqezatat-Ne-Syrin-EArabeve.png",
         "publisher": "logos-a.com",
         "description": "Ideja themelore e këtij libri është e thjeshtë: rrëfimi i historisë së kryqëzatave ashtu siç është parë, përjetuar dhe mbajtur shënim në “anën tjetër” - në kampin arab. Përmbajtja bazohet pothuajse ekskluzivisht mbi dëshmitë e historianëve dhe kronistëve arabë të asaj epoke. Një libër që ndihmon të kuptohen kryqëzatat gjatë dy shekujve të trazuar, të cilët i dhanë formë Perëndimit dhe botës arabe pa dallim, madje ndikojnë në marrëdhëniet ndërmjet tyre deri në ditët e sotme."
+    },
+    {
+        "id": "5",
+        "verified": 0,
+        "title": "1984",
+        "author": "George Orwell",
+        "link": "/read/1984-GeorgeOrwell.pdf",
+        "categories": [
+            "Roman",
+            "Artistike",
+            "Distopiane"
+        ],
+        "image": "https://i.postimg.cc/vmgpntJv/1984.png",
+        "publisher": "",
+        "description": "1984 është një novelë e publikuar në vitin 1949 nga shkrimtari Xhorxh Oruell. Novela bën fjalë për një botë distopike, ku ngjarjet zhvillohen në një të ardhme imagjinare në Airstrip One (që njihet në të shkuarën në libër si Britania e Madhe), një provincë e supershtetit Oceania (Oqeania). Ne këtë libër, bota përshkruhet në luftë të vazhdueshme, ku Partia në fuqi është në kontrollë të çdo gjëje, dhe duke përdorur teknologji të avancuar arrijnë të kontrollojnë të gjitha lëvizjet e qytetarëve në mënyre që të mbajnë gjithçka nën kontroll dhe të jenë gjithmonë në fuqi."
+    },
+    {
+        "id": "6",
+        "verified": 1,
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "link": "/read/Fahrenheit451.pdf",
+        "categories": [
+            "Roman",
+            "Artistike",
+            "Distopiane"
+        ],
+        "image": "https://i.postimg.cc/4xdCfgwq/fahrenheit451.png",
+        "publisher": "",
+        "description": "Gaj Montag është zjarrvënës. Puna e tij është të shkatërrojë mallin më të jashtëligjshëm, librat e shtypur, bashkë me shtëpitë në të cilat fshihen. Montag nuk vë kurrë në pikëpyetje dëmin që veprimet e tij krijojnë, duke jetuar çdo ditë qetas me gruan e tij, Mildredin, e cila e kalon gjithë ditën në televizionin e “familjes”. Por kur takon një komshike të re dhe të çuditshme, Klarisën, e cila i tregon për të kaluarën kur njerëzit nuk kanë jetuar me frikë dhe për të tashme ku njeriu mund ta shohë botën përmes ideve të dhëna në libra në vend të broçkullave televizive, Montagu fillon të vëjë gjithçka në pikëpyetje."
+    },
+    {
+        "id": "2",
+        "verified": 1,
+        "title": "Nëpunësi i Pallatit të Ëndrrave",
+        "author": "Ismail Kadare",
+        "link": "/read/NepunesiiPallatitteEndrrave.pdf",
+        "categories": [
+            "Roman",
+            "Artistike"
+        ],
+        "image": "https://i.postimg.cc/L5V2CNVR/N-pun-si-i-Pallatit-t-ndrrave.png",
+        "publisher": "",
+        "description": "Është roman që sipërfaqësisht sulmon Perandorinë Osmane, por godet çdo sistem totalitar që provon të ushtrojë pushtet absolut mbi individin. Romani bën fjalë për një shtet totalitar që në shikim të parë duket si Perandoria Osmane, ku ekziston një institucion shtetëror i quajtur Tabir Saraj (Pallati i Ëndrrave), qëllimi i të cilit është mbledhja e ëndrrave të qytetarëve, shqyrtimi dhe interpretimi i tyre me qëllim të gjetjes së shenjave të rebelimit ndaj shtetit ose paralajmërimeve për fatkeqësi."
     }
 ]

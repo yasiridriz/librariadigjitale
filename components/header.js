@@ -6,6 +6,7 @@ const Header = () => {
             <meta charSet="utf-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <title>Libraria Digjitale</title>
+            <meta name="description" content="Burimi më i madh i librave digjitale në gjuhën Shqipe." />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="google-site-verification" content="XMgr__FORNFgpyt4vRg0NlFaVWnfUlAwlZc_jLPeteI" />
             <link rel="stylesheet" type="text/css" media="screen" href="/styles/importer.css" />
