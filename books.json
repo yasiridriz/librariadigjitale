@@ -15,7 +15,7 @@
         "description": "Ky roman fillon me personazhin kryesor Gjorgun që ka zënë pritë dhe pret hasmin të shfaqet për t'ia marrë gjakun vëllait. Pas marrjes së gjakut jeta e tij hyn në një periudhë të re kur ai është i shënjuar për tu vrarë nga famijla me të cilën ishin në gjak. Romani i kushtohet bredhjeve të personazhit kryesor nëpër bjeshkë për t'i kryer detyrimet dhe për t'i gëzuar ditët e mbetura të lirisë para se të mbyllej sipas traditës në kullën e ngujimit. \n Paralel me këtë linjë, jepet linja tjetër, e ardhjes së një çifti të porsamartuar nga kryeqyteti për ta kaluar muajin e mjaltit në Rrafsh."
     },
     {
-        "id": "7",
+        "id": "2",
         "verified": 1,
         "title": "Kodi Da Vinçi",
         "author": "Dan Brown",
@@ -44,18 +44,18 @@
         "description": "Alkimisti është një roman i shkruar nga autori brazilian Paulo Coelho, i cili u botua për herë të parë më 1988. Libri është përkthyer në shumë gjuhë si dhe është një nga librat më të shitur në botë. Duke qenë një roman alegorik, Alkimisti ndjek një bari të ri nga Andaluzia në udhëtimin e tij drejt piramidave të Egjiptit, pasi rregullisht ai kishte parë një ëndërr se do të gjente atje një thesar."
     },
     {
-        "id": "4",
+        "id": "8",
         "verified": 1,
-        "title": "Kryqëzatat në syrin e Arabëve",
-        "author": "Amin Maalouf",
-        "link": "https://www.logos-a.com/online/book/94/read",
+        "title": "Krim dhe Ndëshkim",
+        "author": "Fjodor Dostojevski",
+        "link": "/read/KrimDheNdeshkim-Dostojevski.pdf",
         "categories": [
             "Roman",
-            "Histori"
+            "Artistike"
         ],
-        "image": "https://i.postimg.cc/KzVtL9fN/Kryqezatat-Ne-Syrin-EArabeve.png",
-        "publisher": "logos-a.com",
-        "description": "Ideja themelore e këtij libri është e thjeshtë: rrëfimi i historisë së kryqëzatave ashtu siç është parë, përjetuar dhe mbajtur shënim në “anën tjetër” - në kampin arab. Përmbajtja bazohet pothuajse ekskluzivisht mbi dëshmitë e historianëve dhe kronistëve arabë të asaj epoke. Një libër që ndihmon të kuptohen kryqëzatat gjatë dy shekujve të trazuar, të cilët i dhanë formë Perëndimit dhe botës arabe pa dallim, madje ndikojnë në marrëdhëniet ndërmjet tyre deri në ditët e sotme."
+        "image": "https://i.postimg.cc/Njrp667s/krimdhendeshkim.png",
+        "publisher": "",
+        "description": "'Krim dhe ndëshkim' është një roman social, psikologjik, filozofik dhe ideologjik. Ky ishte një roman i ri për letërsinë botërore, pasi ai trajtonte një larmishmëri problemesh: problemin e kushteve të ekzistencës së shoqërisë dhe shtresave të ulëta të popullsisë, alkoolit dhe prostitucionit."
     },
     {
         "id": "5",
@@ -88,7 +88,7 @@
         "description": "Gaj Montag është zjarrvënës. Puna e tij është të shkatërrojë mallin më të jashtëligjshëm, librat e shtypur, bashkë me shtëpitë në të cilat fshihen. Montag nuk vë kurrë në pikëpyetje dëmin që veprimet e tij krijojnë, duke jetuar çdo ditë qetas me gruan e tij, Mildredin, e cila e kalon gjithë ditën në televizionin e “familjes”. Por kur takon një komshike të re dhe të çuditshme, Klarisën, e cila i tregon për të kaluarën kur njerëzit nuk kanë jetuar me frikë dhe për të tashme ku njeriu mund ta shohë botën përmes ideve të dhëna në libra në vend të broçkullave televizive, Montagu fillon të vëjë gjithçka në pikëpyetje."
     },
     {
-        "id": "2",
+        "id": "7",
         "verified": 1,
         "title": "Nëpunësi i Pallatit të Ëndrrave",
         "author": "Ismail Kadare",
@@ -100,5 +100,19 @@
         "image": "https://i.postimg.cc/L5V2CNVR/N-pun-si-i-Pallatit-t-ndrrave.png",
         "publisher": "",
         "description": "Është roman që sipërfaqësisht sulmon Perandorinë Osmane, por godet çdo sistem totalitar që provon të ushtrojë pushtet absolut mbi individin. Romani bën fjalë për një shtet totalitar që në shikim të parë duket si Perandoria Osmane, ku ekziston një institucion shtetëror i quajtur Tabir Saraj (Pallati i Ëndrrave), qëllimi i të cilit është mbledhja e ëndrrave të qytetarëve, shqyrtimi dhe interpretimi i tyre me qëllim të gjetjes së shenjave të rebelimit ndaj shtetit ose paralajmërimeve për fatkeqësi."
+    },
+    {
+        "id": "4",
+        "verified": 1,
+        "title": "Kryqëzatat në syrin e Arabëve",
+        "author": "Amin Maalouf",
+        "link": "https://www.logos-a.com/online/book/94/read",
+        "categories": [
+            "Roman",
+            "Histori"
+        ],
+        "image": "https://i.postimg.cc/KzVtL9fN/Kryqezatat-Ne-Syrin-EArabeve.png",
+        "publisher": "logos-a.com",
+        "description": "Ideja themelore e këtij libri është e thjeshtë: rrëfimi i historisë së kryqëzatave ashtu siç është parë, përjetuar dhe mbajtur shënim në “anën tjetër” - në kampin arab. Përmbajtja bazohet pothuajse ekskluzivisht mbi dëshmitë e historianëve dhe kronistëve arabë të asaj epoke. Një libër që ndihmon të kuptohen kryqëzatat gjatë dy shekujve të trazuar, të cilët i dhanë formë Perëndimit dhe botës arabe pa dallim, madje ndikojnë në marrëdhëniet ndërmjet tyre deri në ditët e sotme."
     }
 ]
