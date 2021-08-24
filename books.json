@@ -5,7 +5,7 @@
         "verified": 1,
         "title": "Prilli i thyer",
         "author": "Ismail Kadare",
-        "link": "/read/PrilliiThyer.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike"
@@ -19,7 +19,7 @@
         "verified": 1,
         "title": "Kodi Da Vinçi",
         "author": "Dan Brown",
-        "link": "/read/DanBrown-KodiiDaVincit.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike"
@@ -33,7 +33,7 @@
         "verified": 1,
         "title": "Alkimisti",
         "author": "Paulo Coelho",
-        "link": "/read/P-Coelho-Alkimisti.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike",
@@ -48,7 +48,7 @@
         "verified": 1,
         "title": "Krim dhe Ndëshkim",
         "author": "Fjodor Dostojevski",
-        "link": "/read/KrimDheNdeshkim-Dostojevski.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike"
@@ -62,7 +62,7 @@
         "verified": 0,
         "title": "1984",
         "author": "George Orwell",
-        "link": "/read/1984-GeorgeOrwell.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike",
@@ -77,7 +77,7 @@
         "verified": 1,
         "title": "Fahrenheit 451",
         "author": "Ray Bradbury",
-        "link": "/read/Fahrenheit451.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike",
@@ -92,7 +92,7 @@
         "verified": 1,
         "title": "Nëpunësi i Pallatit të Ëndrrave",
         "author": "Ismail Kadare",
-        "link": "/read/NepunesiiPallatitteEndrrave.pdf",
+        "link": "/",
         "categories": [
             "Roman",
             "Artistike"

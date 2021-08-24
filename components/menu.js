@@ -9,10 +9,10 @@ const Menu = props => {
             <nav className="nav">
                 <ul>
                     <li>
-                        <Link href="/" activeClassName="active"><a data-hover="Ballina">Ballina</a></Link>
+                        <Link href="/books" activeClassName="active"><a data-hover="Librat">Librat</a></Link>
                     </li>
                     <li>
-                        <Link href="/books" activeClassName="active"><a data-hover="Librat">Librat</a></Link>
+                        <Link href="/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>
                     </li>
                     {/* <li>
                         <Link href="/books/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>

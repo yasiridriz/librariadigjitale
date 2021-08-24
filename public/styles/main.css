@@ -290,6 +290,10 @@ h3 {
     outline: none;
 }
 
+.form-box {
+    padding-top: 2em;
+}
+
 .form-box .btn-main {
     display: block;
     margin: 0 auto;
@@ -543,6 +547,10 @@ h3 {
     display: inline-block;
 }
 
+.links a {
+    display: inline-block;
+}
+
 @media screen and (max-width:740px) {
     .bookContainer.expanded {
         padding: 0;
@@ -575,6 +583,11 @@ h3 {
     .btn-main {
         margin: 0 auto;
         display: block;
+    }
+
+    .links a {
+        display: block;
+        margin: .5em auto;
     }
 
     .nav ul li {

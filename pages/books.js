@@ -1,27 +1,13 @@
 import { useState } from 'react';
+
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { titleVariants, contentVariants } from '../components/motionVariants';
+
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+
 import books from '../books.json';
 
-const titleVariants = {
-    initial: { scale: 1.07, opacity: 0 },
-    enter: { scale: 1, opacity: 1, transition: { duration: .5, ease: [0.48, 0.15, 0.25, 0.96], when: "beforeChildren", staggerChildren: .035 } },
-    exit: {
-        x: 0,
-        opacity: 0,
-        transition: { duration: 0.3, ease: [0.48, 0.15, 0.25, 0.96], staggerChildren: .02 }
-    }
-};
-const contentVariants = {
-    initial: { scale: 1, y: 60, opacity: 0 },
-    enter: { scale: 1, y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96], when: "beforeChildren", staggerChildren: .035 } },
-    exit: {
-        x: 0,
-        opacity: 0,
-        transition: { duration: 0.25, ease: [0.48, 0.15, 0.25, 0.96] }
-    },
-}
 const bookVariants = {
     enter: {
         opacity: 1,
@@ -67,9 +53,19 @@ function ExpandedBook({ book, onCollapse }) {
                                                 </p>
                                                 <hr />
                                                 <br />
-                                                <a target="_blank" href={book.link} className="btn-main noborder" >
-                                                    Lexo {book.publisher !== "" ? `në ${book.publisher}` : ""}
-                                                </a>
+                                                <div class="links">
+                                                    <a target="_blank" href={book.link} className="btn-main noborder" >
+                                                        Lexo {book.publisher !== "" ? `në ${book.publisher}` : ""}
+                                                    </a>
+                                                    <a target="_blank" download href={book.link} className="btn-main noborder" >
+                                                        PDF
+                                                    </a>
+                                                    <a target="_blank" download href={book.link} className="btn-main noborder" >
+                                                        EPUB
+                                                    </a>
+
+                                                </div>
+
                                             </motion.div>
                                         </motion.div>
                                     </div>
@@ -151,7 +147,7 @@ const Books = () => {
 
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
-            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Librat</span></motion.h1>
+            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Të Gjitha Librat</span></motion.h1>
             <motion.div variants={titleVariants} className="search">
                 <div className="row">
                     <div className="col-md-6">

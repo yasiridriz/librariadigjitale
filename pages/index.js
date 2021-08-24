@@ -2,25 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Router from 'next/router';
 import books from '../books.json';
-
-const titleVariants = {
-  initial: { scale: 1.07, opacity: 0 },
-  enter: { scale: 1, opacity: 1, transition: { duration: .5, ease: [0.48, 0.15, 0.25, 0.96], when: "beforeChildren", staggerChildren: .035 } },
-  exit: {
-    x: 0,
-    opacity: 0,
-    transition: { duration: 0.3, ease: [0.48, 0.15, 0.25, 0.96], staggerChildren: .02 }
-  }
-};
-const contentVariants = {
-  initial: { scale: 1, y: 60, opacity: 0 },
-  enter: { scale: 1, y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] } },
-  exit: {
-    x: 0,
-    opacity: 0,
-    transition: { duration: 0.25, ease: [0.48, 0.15, 0.25, 0.96] }
-  },
-}
+import { titleVariants, contentVariants } from '../components/motionVariants';
 
 const Home = () => {
   return (
@@ -58,33 +40,33 @@ const Home = () => {
       <motion.div variants={contentVariants} className="container" className="box">
         <h1 className="title"> Libri i javës: </h1>
         <motion.div variants={contentVariants} className="thisweek">
-            <div className="row justify-content-center">
-              <div variants={contentVariants} className="book">
-                <div className="row">
-                  <div className="col-md-4">
-                    <div className="imageContainer">
-                      <img layoutId={`image-${books[2].id}`} src={books[2].image} />
-                    </div>
+          <div className="row justify-content-center">
+            <div variants={contentVariants} className="book">
+              <div className="row">
+                <div className="col-md-4">
+                  <div className="imageContainer">
+                    <img layoutId={`image-${books[2].id}`} src={books[2].image} />
                   </div>
-                  <div className="col-md-8">
-                    <div className="details">
-                      <h1>{books[2].title}</h1>
-                      <p>Nga <Link href="/authors/id"><a>{books[2].author}</a></Link></p>
-                      <motion.div className="description">
-                        <p>
-                          {books[2].description}
-                        </p>
-                        <hr />
-                        <br />
-                        <a target="_blank" href={books[3].link} className="btn-main noborder" >
-                          Lexo {books[2].publisher !== "" ? `në ${books[2].publisher}` : ""}
-                        </a>
-                      </motion.div>
-                    </div>
+                </div>
+                <div className="col-md-8">
+                  <div className="details">
+                    <h1>{books[2].title}</h1>
+                    <p>Nga <Link href="/authors/id"><a>{books[2].author}</a></Link></p>
+                    <motion.div className="description">
+                      <p>
+                        {books[2].description}
+                      </p>
+                      <hr />
+                      <br />
+                      <a target="_blank" href={books[3].link} className="btn-main noborder" >
+                        Lexo {books[2].publisher !== "" ? `në ${books[2].publisher}` : ""}
+                      </a>
+                    </motion.div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </motion.div>
       </motion.div>
       {/* <motion.div variants={contentVariants} className="container" className="box">
