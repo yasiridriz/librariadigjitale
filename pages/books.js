@@ -202,7 +202,7 @@ const Books = ({ books }) => {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
     const client = await clientPromise;
 
     var db = client.db();
@@ -211,7 +211,6 @@ export async function getStaticProps() {
         .collection("books")
         .find({})
         .toArray();
-
     return {
         props: {
             books: JSON.parse(JSON.stringify(books)),
