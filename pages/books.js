@@ -6,6 +6,8 @@ import { titleVariants, contentVariants } from '../components/motionVariants';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import clientPromise from "../lib/mongodb";
+
 import books from '../books.json';
 
 const bookVariants = {
@@ -82,11 +84,11 @@ function ExpandedBook({ book, onCollapse }) {
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <motion.div variants={contentVariants} className="col-md-4" onClick={disabled ? undefined : onExpand} style={{ "margin-bottom": "2em" }}>
+        <motion.div variants={contentVariants} className="col-md-4" onClick={disabled ? undefined : onExpand} style={{ marginBottom: "2em" }}>
             <motion.div className="bookContainer" layoutId={`bookContainer`} variants={bookVariants}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                        <img layoutId={`image-${book.id}`} src={book.image} />
+                        <img src={book.image} />
                     </motion.div>
                     <motion.div layoutId={`details-${book.id}`} className="details">
                         <h2>{book.title}</h2>
@@ -123,7 +125,7 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
     )
 }
 
-const Books = () => {
+const Books = ({ books }) => {
     const [expandedBook, setCollapsedBook] = useState();
     const [search, setSearch] = useState("");
     let tokens = search
@@ -151,7 +153,7 @@ const Books = () => {
             <motion.div variants={titleVariants} className="search">
                 <div className="row">
                     <div className="col-md-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#cccccc" fill="none" stroke-linecap="square" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" strokeWidth="1" stroke="#cccccc" fill="none" strokeLinecap="square" strokeLinejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <circle cx="10" cy="10" r="7" />
                             <line x1="21" y1="21" x2="15" y2="15" />
@@ -203,6 +205,24 @@ const Books = () => {
 
         </motion.div>
     )
+}
+
+
+export async function getStaticProps() {
+    const client = await clientPromise;
+
+    var db = client.db();
+
+    const books = await db
+        .collection("books")
+        .find({})
+        .toArray();
+
+    return {
+        props: {
+            books: JSON.parse(JSON.stringify(books)),
+        },
+    };
 }
 
 export default Books;
