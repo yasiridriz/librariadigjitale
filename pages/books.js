@@ -1,27 +1,13 @@
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { titleVariants, contentVariants } from '../components/motionVariants';
 
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-
-
 import clientPromise from "../lib/mongodb"; // mongo client
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-const bookVariants = {
-    enter: {
-        opacity: 1,
-        transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] }
-    },
-    exit: {
-        opacity: 1,
-        transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] }
-    }
-}
 
 function ExpandedBook({ book, onCollapse }) {
+    useLockBodyScroll();
     return (
         <>
             <motion.div
@@ -33,11 +19,11 @@ function ExpandedBook({ book, onCollapse }) {
                 onClick={onCollapse}
             >
             </motion.div>
-            <motion.div variants={bookVariants} className="col-md-4">
+            <motion.div className="col-md-4">
                 <motion.div layoutId={`bookContainer`} className="bookContainer expanded">
                     <div className="row justify-content-center">
                         <div className="col-md-8">
-                            <motion.div layoutId={`book-${book.id}`} variants={bookVariants} className="book">
+                            <motion.div layoutId={`book-${book.id}`} className="book">
                                 <div className="row">
                                     <div className="col-md-4">
                                         <motion.div layoutId={`image-${book.id}`} className="imageContainer">
@@ -45,7 +31,10 @@ function ExpandedBook({ book, onCollapse }) {
                                         </motion.div>
                                     </div>
                                     <div className="col-md-8">
-                                        <motion.div layoutId={`details-${book.id}`} className="details">
+                                        <motion.div initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.2, delay: 0.25 }} className="details">
                                             <span className="close" onClick={onCollapse}></span>
                                             <h1>{book.title}</h1>
                                             <p>Nga {book.author}</p>
@@ -80,16 +69,16 @@ function ExpandedBook({ book, onCollapse }) {
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <motion.div variants={contentVariants} className="col-md-4" onClick={disabled ? undefined : onExpand} style={{ marginBottom: "2em" }}>
-            <motion.div className="bookContainer" layoutId={`bookContainer`} variants={bookVariants}>
+        <motion.div className="col-md-4" onClick={disabled ? undefined : onExpand}>
+            <motion.div className="bookContainer" layoutId={`bookContainer`}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
                         <img src={book.image} />
                     </motion.div>
-                    <motion.div layoutId={`details-${book.id}`} className="details">
+                    {/* <motion.div layoutId={`details-${book.id}`} className="details">
                         <h2>{book.title}</h2>
                         <p>{book.author}</p>
-                    </motion.div>
+                    </motion.div> */}
                 </motion.div>
             </motion.div>
         </motion.div>
@@ -98,6 +87,10 @@ function CompactBook({ book, onExpand, disabled }) {
 
 const Book = ({ book, onCollapse, onExpand, disabled }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+
+    if (isExpanded) {
+
+    }
 
     const collapse = () => {
         setIsExpanded(false);
@@ -216,6 +209,16 @@ export async function getServerSideProps(context) {
             books: JSON.parse(JSON.stringify(books)),
         },
     };
+}
+
+// hook to stop body from scrolling when book is expanded
+function useLockBodyScroll() {
+    useLayoutEffect(() => {
+        const originalStyle = window.getComputedStyle(document.body).overflow;
+        document.body.style.overflow = "hidden";
+
+        return () => (document.body.style.overflow = originalStyle); // go back to scroll
+    }, []);
 }
 
 export default Books;

@@ -11,9 +11,9 @@ const Menu = props => {
                     <li>
                         <Link href="/books" activeClassName="active"><a data-hover="Librat">Librat</a></Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link href="/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>
-                    </li>
+                    </li> */}
                     {/* <li>
                         <Link href="/books/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>
                     </li> */}

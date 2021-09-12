@@ -16,3 +16,14 @@ export const contentVariants = {
       transition: { duration: 0.25, ease: [0.48, 0.15, 0.25, 0.96] }
     },
 }
+
+export const bookVariants = {
+  enter: {
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] }
+  },
+  exit: {
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] }
+  }
+}

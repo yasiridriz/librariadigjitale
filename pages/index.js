@@ -45,7 +45,7 @@ const Home = () => {
               <div className="row">
                 <div className="col-md-4">
                   <div className="imageContainer">
-                    <img layoutId={`image-${books[2].id}`} src={books[2].image} />
+                    <img src={books[2].image} />
                   </div>
                 </div>
                 <div className="col-md-8">

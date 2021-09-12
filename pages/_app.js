@@ -1,5 +1,5 @@
 import Layout from '../components/layout';
-import { AnimatePresence } from 'framer-motion';
+import { AnimateSharedLayout } from 'framer-motion';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import * as gtag from '../lib/gtag'
@@ -18,11 +18,11 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 function Libraria({ Component, pageProps, router }) {
   return (
-    <Layout>
-      <AnimatePresence exitBeforeEnter>
+    <AnimateSharedLayout type="crossfade">
+      <Layout>
         <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
-    </Layout>
+      </Layout>
+    </AnimateSharedLayout>
   )
 }
 
