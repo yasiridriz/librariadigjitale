@@ -34,11 +34,11 @@ function ExpandedBook({ book, onCollapse }) {
                     <div className="row justify-content-center no-gutters">
                         <motion.div layoutId={`book-${book.id}`} className="book col-xl-8 col-md-12">
                             <div className="row">
-                                {/* <div className="col-md-4">
+                                <div className="col-md-4">
                                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
                                         <img src={book.image} />
                                     </motion.div>
-                                </div> */}
+                                </div>
                                 <div className="col-md-8">
                                     <AnimatePresence exitBeforeEnter>
                                         <motion.div initial={{ opacity: 0 }}

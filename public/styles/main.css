@@ -540,6 +540,10 @@ h3 {
         padding-top: 0;
     }
 
+    .imageContainer {
+        display: none;
+    }
+
     body {
         padding: 350px 4vw 300px 4vw !important;
     }
