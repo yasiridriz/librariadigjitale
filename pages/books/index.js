@@ -1,11 +1,21 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-import { titleVariants, contentVariants } from '../components/motionVariants';
+import { titleVariants, contentVariants, bookVariants } from '../../components/motionVariants';
 
-import clientPromise from "../lib/mongodb"; // mongo client
+import clientPromise from "../../lib/mongodb"; // mongo client
 
+// hook to stop body from scrolling when book is expanded
+function useLockBodyScroll() {
+    useLayoutEffect(() => {
+        const originalStyle = window.getComputedStyle(document.body).overflow;
+        document.body.style.overflow = "hidden";
 
+        return () => (document.body.style.overflow = originalStyle); // go back to scroll
+    }, []);
+}
 function ExpandedBook({ book, onCollapse }) {
     useLockBodyScroll();
     return (
@@ -19,22 +29,22 @@ function ExpandedBook({ book, onCollapse }) {
                 onClick={onCollapse}
             >
             </motion.div>
-            <motion.div className="col-md-4">
-                <motion.div layoutId={`bookContainer`} className="bookContainer expanded">
-                    <div className="row justify-content-center">
-                        <div className="col-md-8">
-                            <motion.div layoutId={`book-${book.id}`} className="book">
-                                <div className="row">
-                                    <div className="col-md-4">
-                                        <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                                            <img src={book.image} />
-                                        </motion.div>
-                                    </div>
-                                    <div className="col-md-8">
+            <motion.div layoutId={`bookContainer`} id="bookContainer" className="bookContainer expanded">
+                <div className="container-fluid px-0">
+                    <div className="row justify-content-center no-gutters">
+                        <motion.div layoutId={`book-${book.id}`} className="book col-xl-8 col-md-12">
+                            <div className="row">
+                                {/* <div className="col-md-4">
+                                    <motion.div layoutId={`image-${book.id}`} className="imageContainer">
+                                        <img src={book.image} />
+                                    </motion.div>
+                                </div> */}
+                                <div className="col-md-8">
+                                    <AnimatePresence exitBeforeEnter>
                                         <motion.div initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
-                                            transition={{ duration: 0.2, delay: 0.25 }} className="details">
+                                            transition={{ duration: 0.2, delay: 0.25 }} className="details" key="details">
                                             <span className="close" onClick={onCollapse}></span>
                                             <h1>{book.title}</h1>
                                             <p>Nga {book.author}</p>
@@ -55,12 +65,14 @@ function ExpandedBook({ book, onCollapse }) {
 
                                             </motion.div>
                                         </motion.div>
-                                    </div>
+                                    </AnimatePresence>
+
                                 </div>
-                            </motion.div>
-                        </div>
+                            </div>
+                        </motion.div>
                     </div>
-                </motion.div>
+                </div>
+
             </motion.div>
         </>
 
@@ -69,9 +81,9 @@ function ExpandedBook({ book, onCollapse }) {
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <motion.div className="col-md-4" onClick={disabled ? undefined : onExpand}>
-            <motion.div className="bookContainer" layoutId={`bookContainer`}>
-                <motion.div layoutId={`book-${book.id}`} className="book">
+        <motion.div className="col-md-4 compact" onClick={disabled ? undefined : onExpand} variants={bookVariants}>
+            <motion.div className="bookContainer" layoutId={`bookContainer`} >
+                <motion.div layoutId={`book-${book.id}`} className="book" >
                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
                         <img src={book.image} />
                     </motion.div>
@@ -81,16 +93,12 @@ function CompactBook({ book, onExpand, disabled }) {
                     </motion.div> */}
                 </motion.div>
             </motion.div>
-        </motion.div>
+        </motion.div >
     );
 }
 
 const Book = ({ book, onCollapse, onExpand, disabled }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-
-    if (isExpanded) {
-
-    }
 
     const collapse = () => {
         setIsExpanded(false);
@@ -100,7 +108,9 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
     const expand = () => {
         setIsExpanded(true);
         onExpand();
+
     };
+
     return (
         <AnimateSharedLayout type="crossfade">
             {isExpanded ? (
@@ -115,7 +125,10 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
 }
 
 const Books = ({ books }) => {
+
+
     const [expandedBook, setCollapsedBook] = useState();
+
     const [search, setSearch] = useState("");
     let tokens = search
         .toLowerCase()
@@ -211,14 +224,5 @@ export async function getServerSideProps(context) {
     };
 }
 
-// hook to stop body from scrolling when book is expanded
-function useLockBodyScroll() {
-    useLayoutEffect(() => {
-        const originalStyle = window.getComputedStyle(document.body).overflow;
-        document.body.style.overflow = "hidden";
-
-        return () => (document.body.style.overflow = originalStyle); // go back to scroll
-    }, []);
-}
 
 export default Books;

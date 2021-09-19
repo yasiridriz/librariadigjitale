@@ -18,7 +18,9 @@ export const contentVariants = {
 }
 
 export const bookVariants = {
+  initial: { y: 0 },
   enter: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.6, ease: [0.48, 0.15, 0.25, 0.96] }
   },
