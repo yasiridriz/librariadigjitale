@@ -540,7 +540,7 @@ h3 {
         padding-top: 0;
     }
 
-    .imageContainer {
+    .bookContainer.expanded .imageContainer, .bookContainer.expanded .imageContainer img {
         display: none;
     }
 
