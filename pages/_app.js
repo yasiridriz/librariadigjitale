@@ -19,9 +19,9 @@ import * as gtag from '../lib/gtag';
 function Libraria({ Component, pageProps, router }) {
   return (
     <Layout>
-      <AnimatePresence type="crossfade">
+      <AnimateSharedLayout type="crossfade">
         <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
+      </AnimateSharedLayout>
     </Layout>
   )
 }

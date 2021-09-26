@@ -45,7 +45,7 @@ function ExpandedBook({ book, onCollapse }) {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                             transition={{ duration: 0.2, delay: 0.25 }} className="details" key="details">
-                                            <Link href="/librat/"><span className="close" onClick={onCollapse}></span></Link>
+                                            <Link href="/librat/" scroll={false}><span className="close" onClick={onCollapse}></span></Link>
                                             <h1>{book.title}</h1>
                                             <p>Nga {book.author}</p>
                                             <motion.div className="description">
@@ -80,7 +80,7 @@ function ExpandedBook({ book, onCollapse }) {
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} replace>
+        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false}>
             <motion.div className="col-md-4 compact" onClick={disabled ? undefined : onExpand} variants={bookVariants}>
                 <motion.div className="bookContainer" layoutId={`bookContainer`} >
                     <motion.div layoutId={`book-${book.id}`} className="book" >
