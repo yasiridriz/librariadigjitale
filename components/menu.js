@@ -9,7 +9,7 @@ const Menu = props => {
             <nav className="nav">
                 <ul>
                     <li>
-                        <Link href="/books" activeClassName="active"><a data-hover="Librat">Librat</a></Link>
+                        <Link href="/librat" activeClassName="active"><a data-hover="Librat">Librat</a></Link>
                     </li>
                     {/* <li>
                         <Link href="/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>
@@ -18,7 +18,7 @@ const Menu = props => {
                         <Link href="/books/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>
                     </li> */}
                     <li>
-                        <Link href="/contact" activeClassName="active"><a data-hover="Kontakti">Kontakti</a></Link>
+                        <Link href="/kontakti" activeClassName="active"><a data-hover="Kontakti">Kontakti</a></Link>
                     </li>
                 </ul>
             </nav>

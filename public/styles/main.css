@@ -463,20 +463,17 @@ h3 {
 
 
 
-.bookContainer.expanded .book .imageContainer,
-.thisweek .book .imageContainer {
+.bookContainer.expanded .book .imageContainer {
     left: 0;
     height: 100%;
 }
 
-.bookContainer.expanded .book .imageContainer img,
-.thisweek .book .imageContainer img {
+.bookContainer.expanded .book .imageContainer img{
     min-height: 100%;
     left: 0;
 }
 
-.bookContainer.expanded .book .details,
-.thisweek .book .details {
+.bookContainer.expanded .book .details {
 
     border: none;
     padding-top: 3em;
@@ -529,6 +526,14 @@ h3 {
 
 .links a {
     display: inline-block;
+}
+
+.page {
+    padding-top: 5%;
+}
+
+.page .imageContainer img {
+    width: 100%;
 }
 
 @media screen and (max-width:740px) {

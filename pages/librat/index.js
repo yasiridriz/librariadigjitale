@@ -16,8 +16,9 @@ function useLockBodyScroll() {
         return () => (document.body.style.overflow = originalStyle); // go back to scroll
     }, []);
 }
+
+
 function ExpandedBook({ book, onCollapse }) {
-    useLockBodyScroll();
     return (
         <>
             <motion.div
@@ -26,14 +27,13 @@ function ExpandedBook({ book, onCollapse }) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, delay: 0.1 }}
                 className="overlay"
-                onClick={onCollapse}
             >
             </motion.div>
             <motion.div layoutId={`bookContainer`} id="bookContainer" className="bookContainer expanded">
                 <div className="container-fluid px-0">
                     <div className="row justify-content-center no-gutters">
                         <motion.div layoutId={`book-${book.id}`} className="book col-xl-8 col-md-12">
-                            <div className="row">
+                            <div className="row no-gutters">
                                 <div className="col-md-4">
                                     <motion.div layoutId={`image-${book.id}`} className="imageContainer">
                                         <img src={book.image} />
@@ -45,7 +45,7 @@ function ExpandedBook({ book, onCollapse }) {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                             transition={{ duration: 0.2, delay: 0.25 }} className="details" key="details">
-                                            <span className="close" onClick={onCollapse}></span>
+                                            <Link href="/librat/"><span className="close" onClick={onCollapse}></span></Link>
                                             <h1>{book.title}</h1>
                                             <p>Nga {book.author}</p>
                                             <motion.div className="description">
@@ -75,25 +75,26 @@ function ExpandedBook({ book, onCollapse }) {
 
             </motion.div>
         </>
-
     )
 }
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <motion.div className="col-md-4 compact" onClick={disabled ? undefined : onExpand} variants={bookVariants}>
-            <motion.div className="bookContainer" layoutId={`bookContainer`} >
-                <motion.div layoutId={`book-${book.id}`} className="book" >
-                    <motion.div layoutId={`image-${book.id}`} className="imageContainer">
-                        <img src={book.image} />
-                    </motion.div>
-                    {/* <motion.div layoutId={`details-${book.id}`} className="details">
+        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} replace>
+            <motion.div className="col-md-4 compact" onClick={disabled ? undefined : onExpand} variants={bookVariants}>
+                <motion.div className="bookContainer" layoutId={`bookContainer`} >
+                    <motion.div layoutId={`book-${book.id}`} className="book" >
+                        <motion.div layoutId={`image-${book.id}`} className="imageContainer">
+                            <img src={book.image} />
+                        </motion.div>
+                        {/* <motion.div layoutId={`details-${book.id}`} className="details">
                         <h2>{book.title}</h2>
                         <p>{book.author}</p>
                     </motion.div> */}
+                    </motion.div>
                 </motion.div>
             </motion.div>
-        </motion.div >
+        </Link>
     );
 }
 
@@ -152,6 +153,7 @@ const Books = ({ books }) => {
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
             <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Të Gjitha Librat</span></motion.h1>
+            {/* search */}
             <motion.div variants={titleVariants} className="search">
                 <div className="group">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="30" height="45" viewBox="0 0 24 24" strokeWidth="1" stroke="#bbb" fill="none" strokeLinecap="square" strokeLinejoin="round">
@@ -168,26 +170,8 @@ const Books = ({ books }) => {
                         </svg>
                     </span>
                 </div>
+            </motion.div>
 
-                {/* <div className="col-md-6">
-                        <div className="categories">
-                            <ul>
-                                <li>
-                                    <button className="btn-second">Klasika</button>
-                                </li>
-                                <li>
-                                    <button className="btn-second">Poezi</button>
-                                </li>
-                                <li>
-                                    <button className="btn-second">Trillim</button>
-                                </li>
-                                <li>
-                                    <button className="btn-second">Histori</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> */}
-            </motion.div >
 
             <div className="row">
                 {filteredList.map(book => (
@@ -200,9 +184,6 @@ const Books = ({ books }) => {
                     />
                 ))}
             </div>
-
-
-
         </motion.div >
     )
 }

@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Router from 'next/router';
-import books from '../books.json';
 import { titleVariants, contentVariants } from '../components/motionVariants';
 
-const Home = () => {
+import clientPromise from '../lib/mongodb';
+
+const Home = ({books}) => {
   return (
     <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
       <motion.div variants={contentVariants} className="landing container" className="box">
@@ -45,21 +46,21 @@ const Home = () => {
               <div className="row">
                 <div className="col-md-4">
                   <div className="imageContainer">
-                    <img src={books[2].image} />
+                    <img src={books[1].image} />
                   </div>
                 </div>
                 <div className="col-md-8">
                   <div className="details">
-                    <h1>{books[2].title}</h1>
-                    <p>Nga <Link href="/authors/id"><a>{books[2].author}</a></Link></p>
+                    <h1>{books[1].title}</h1>
+                    <p>Nga <Link href="/authors/id"><a>{books[1].author}</a></Link></p>
                     <motion.div className="description">
                       <p>
-                        {books[2].description}
+                        {books[1].description}
                       </p>
                       <hr />
                       <br />
                       <a target="_blank" href={books[3].link} className="btn-main noborder" >
-                        Lexo {books[2].publisher !== "" ? `në ${books[2].publisher}` : ""}
+                        Lexo {books[1].publisher !== "" ? `në ${books[1].publisher}` : ""}
                       </a>
                     </motion.div>
                   </div>
@@ -84,6 +85,22 @@ const Home = () => {
       </motion.div> */}
     </motion.div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const client = await clientPromise;
+
+  var db = client.db();
+
+  const books = await db
+      .collection("books")
+      .find({})
+      .toArray();
+  return {
+      props: {
+          books: JSON.parse(JSON.stringify(books)),
+      },
+  };
 }
 
 export default Home;
