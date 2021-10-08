@@ -428,6 +428,7 @@ h3 {
     display: block;
     max-width: 100%;
     position: relative;
+    overflow-y: scroll;
     left: 0;
     top: 0;
 
@@ -545,9 +546,9 @@ h3 {
         padding-top: 0;
     }
 
-    .bookContainer.expanded .imageContainer, .bookContainer.expanded .imageContainer img {
+    /* .bookContainer.expanded .imageContainer, .bookContainer.expanded .imageContainer img {
         display: none;
-    }
+    } */
 
     body {
         padding: 350px 4vw 300px 4vw !important;

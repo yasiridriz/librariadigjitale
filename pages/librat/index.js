@@ -19,6 +19,12 @@ function useLockBodyScroll() {
 
 
 function ExpandedBook({ book, onCollapse }) {
+    useLockBodyScroll()
+    function truncate( str, n ){
+        if (str.length <= n) { return str; }
+        const subString = str.substr(0, n-1); // the original check
+        return (subString.substr(0, subString.lastIndexOf(" ")).concat('... '))
+    };
     return (
         <>
             <motion.div
@@ -50,7 +56,9 @@ function ExpandedBook({ book, onCollapse }) {
                                             <p>Nga {book.author}</p>
                                             <motion.div className="description">
                                                 <p>
-                                                    {book.description}
+                                                    {truncate(book.description, 250)}
+                                                    <br /><br />
+                                                    <Link href="/librat/[id].js" as={`/librat/${book.title}`}><a>Lexo më shumë <span className="shift"> &rarr; </span></a></Link>
                                                 </p>
                                                 <hr />
                                                 <div className="links">
@@ -80,7 +88,7 @@ function ExpandedBook({ book, onCollapse }) {
 
 function CompactBook({ book, onExpand, disabled }) {
     return (
-        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false}>
+        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
             <motion.div className="col-md-4 compact" onClick={disabled ? undefined : onExpand} variants={bookVariants}>
                 <motion.div className="bookContainer" layoutId={`bookContainer`} >
                     <motion.div layoutId={`book-${book.id}`} className="book" >

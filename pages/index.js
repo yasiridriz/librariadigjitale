@@ -21,7 +21,7 @@ const Home = ({books}) => {
         <p style={{ textAlign: "right" }}><Link href="/books"><a> Shih të gjitha <span className="shift">&rarr;</span></a></Link></p>
         <div className="row">
           {books.slice(Math.max(books.length - 3, 0)).map(book => (
-            <motion.div variants={contentVariants} className="col-md-4" onClick={() => Router.push('/books')} style={{ "margin-bottom": "2em" }}>
+            <motion.div variants={contentVariants} className="col-md-4" onClick={() => Router.push('/books')} style={{ "marginBottom": "2em" }}>
               <motion.div className="bookContainer" layoutId={`bookContainer`}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                   <motion.div layoutId={`image-${book.id}`} className="imageContainer">
