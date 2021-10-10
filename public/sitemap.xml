@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>localhost:3000</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:17:26.354Z</lastmod></url>
-<url><loc>localhost:3000/kontakti</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:17:26.355Z</lastmod></url>
-<url><loc>localhost:3000/leximi</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:17:26.355Z</lastmod></url>
-<url><loc>localhost:3000/librat</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:17:26.355Z</lastmod></url>
+<url><loc>https://librariadigjitale.co</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:27:52.276Z</lastmod></url>
+<url><loc>https://librariadigjitale.co/kontakti</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:27:52.284Z</lastmod></url>
+<url><loc>https://librariadigjitale.co/leximi</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:27:52.284Z</lastmod></url>
+<url><loc>https://librariadigjitale.co/librat</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>2021-10-10T16:27:52.284Z</lastmod></url>
 </urlset>

@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: localhost:3000
+Host: https://librariadigjitale.co
 
 # Sitemaps
-Sitemap: localhost:3000/sitemap.xml
-Sitemap: localhost:3000/server-sitemap.xml
+Sitemap: https://librariadigjitale.co/sitemap.xml
+Sitemap: https://librariadigjitale.co/server-sitemap.xml
