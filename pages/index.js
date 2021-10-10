@@ -21,7 +21,7 @@ const Home = ({books}) => {
         <p style={{ textAlign: "right" }}><Link href="/librat"><a> Shih të gjitha <span className="shift">&rarr;</span></a></Link></p>
         <div className="row">
           {books.map(book => (
-            <motion.div variants={contentVariants} className="col-md-4" onClick={() => Router.push('/books')} style={{ "marginBottom": "2em" }}>
+            <motion.div variants={contentVariants} className="col-md-4" onClick={() => Router.push('/librat')} style={{ "marginBottom": "2em" }}>
               <motion.div className="bookContainer" layoutId={`bookContainer`}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
                   <motion.div layoutId={`image-${book.id}`} className="imageContainer">
