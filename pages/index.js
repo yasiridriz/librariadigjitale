@@ -18,9 +18,9 @@ const Home = ({books}) => {
       </motion.div>
       <motion.div variants={contentVariants} className="box latestbooks">
         <h1 className="title"> Librat e Fundit: </h1>
-        <p style={{ textAlign: "right" }}><Link href="/books"><a> Shih të gjitha <span className="shift">&rarr;</span></a></Link></p>
+        <p style={{ textAlign: "right" }}><Link href="/librat"><a> Shih të gjitha <span className="shift">&rarr;</span></a></Link></p>
         <div className="row">
-          {books.slice(Math.max(books.length - 3, 0)).map(book => (
+          {books.map(book => (
             <motion.div variants={contentVariants} className="col-md-4" onClick={() => Router.push('/books')} style={{ "marginBottom": "2em" }}>
               <motion.div className="bookContainer" layoutId={`bookContainer`}>
                 <motion.div layoutId={`book-${book.id}`} className="book">
@@ -38,7 +38,7 @@ const Home = ({books}) => {
 
         </div>
       </motion.div>
-      <motion.div variants={contentVariants} className="container" className="box">
+      {/* <motion.div variants={contentVariants} className="container" className="box">
         <h1 className="title"> Libri i javës: </h1>
         <motion.div variants={contentVariants} className="thisweek">
           <div className="row justify-content-center">
@@ -69,7 +69,7 @@ const Home = ({books}) => {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
       {/* <motion.div variants={contentVariants} className="container" className="box">
         <h1 className="title">Abonohu në librin e javës</h1>
         <div className="form-box col-md-12">
@@ -98,7 +98,7 @@ export async function getServerSideProps(context) {
       .toArray();
   return {
       props: {
-          books: JSON.parse(JSON.stringify(books)),
+          books: JSON.parse(JSON.stringify(books.slice(Math.max(books.length - 3, 0)))),
       },
   };
 }

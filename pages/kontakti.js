@@ -30,11 +30,11 @@ const Contact = () => {
             <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="title">Kontakti</motion.h1>
             <motion.p variants={contentVariants}>
                 Nëse keni ndonjë ankesë apo kërkesë në lidhje me uebsajtin, na dërgoni një mesazh në adresën <a
-                    href="mailto:feedback@librariadigjitale.gq">feedback@librariadigjitale.co</a>, apo dërgoni prej formularit në vijim:
-                    </motion.p>
-            <motion.div variants={contentVariants} className="row">
+                    href="mailto:librariadigjitale@gmail.com">librariadigjitale@gmail.com</a> apo prej Twitter: <a href="https:/twitter.com/libradigjitale">Libraria Digjitale</a>.
+            </motion.p>
+            {/* <motion.div variants={contentVariants} className="row">
                 <div className="form-box col-md-12">
-                    <form method="POST" action="/contact" className="form-box">
+                    {/* <form method="POST" action="/contact" className="form-box">
                         <div className="group">
                             <input type="text" value={name}
                                 onChange={e => setName(e.target.value)} className="input-default" required />
@@ -55,19 +55,9 @@ const Contact = () => {
                                 Dërgo <span class="far fa-paper-plane"></span>
                             </button>
                         </div>
-                    </form>
+                    </form> 
                 </div>
-                {/* <div className="col-md-6">
-                    <p>Find me on social media:</p>
-                    <br/>
-                    <br/>
-                    <a href="https://www.facebook.com/jasir.idriz" target="_blank" className="btn-second facebook"><span className="fab fa-facebook"></span> Yasir</a><br/><br/>
-                    <a href="https://www.instagram.com/yasiridriz" target="_blank" className="btn-second instagram"><span className="fab fa-instagram"></span> @yasiridriz</a><br/><br/>
-                    <a href="https://www.facebook.com/jasir.idriz" target="_blank" className="btn-second linkedin"><span className="fab fa-linkedin"></span> Yasir</a>
-                    <a></a>
-                    <a></a>
-                </div> */}
-            </motion.div>
+            </motion.div> */}
 
         </motion.div>
     );

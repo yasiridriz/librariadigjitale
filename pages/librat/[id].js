@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 
+import Head from "next/head";
+
 import { motion } from "framer-motion";
 
 import clientPromise from "../../lib/mongodb";
@@ -10,6 +12,9 @@ const ExpandedBook = ({ book }) => {
 
     return (
         <>
+            <Head>
+                <title>{book.title} - {book.author}</title>
+            </Head>
             <div id="bookContainer" className="page">
                 <div className="row">
                     <div className="col-md-4">

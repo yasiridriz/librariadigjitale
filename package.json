@@ -1,32 +1,24 @@
 {
-  "name": "app",
+  "name": "librariadigjitale",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.10",
-    "@sendgrid/mail": "^7.4.6",
-    "apollo-server-micro": "^3.3.0",
-    "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.5.0",
-    "express-session": "^1.17.2",
     "framer-motion": "^4.1.5",
-    "graphql": "^15.5.3",
     "list.js": "^2.3.1",
-    "mongoose": "^6.0.4",
     "nanoid": "^3.1.25",
     "next": "^11.1.0",
     "next-connect": "^0.10.2",
+    "next-sitemap": "^1.6.179",
     "nprogress": "^0.2.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "swr": "^0.5.7",
     "validator": "^13.6.0"
   }
 }

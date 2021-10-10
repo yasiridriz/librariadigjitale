@@ -2,6 +2,8 @@ import { useState, useLayoutEffect, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import Head from 'next/head';
+
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { titleVariants, contentVariants, bookVariants } from '../../components/motionVariants';
 
@@ -20,13 +22,16 @@ function useLockBodyScroll() {
 
 function ExpandedBook({ book, onCollapse }) {
     useLockBodyScroll()
-    function truncate( str, n ){
+    function truncate(str, n) {
         if (str.length <= n) { return str; }
-        const subString = str.substr(0, n-1); // the original check
+        const subString = str.substr(0, n - 1); // the original check
         return (subString.substr(0, subString.lastIndexOf(" ")).concat('... '))
     };
     return (
         <>
+            <Head>
+                <title>{book.title} - {book.author}</title>
+            </Head>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -205,6 +210,7 @@ export async function getServerSideProps(context) {
     const books = await db
         .collection("books")
         .find({})
+        .sort({ $natural: -1 })
         .toArray();
     return {
         props: {

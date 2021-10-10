@@ -18,6 +18,9 @@ const Menu = props => {
                         <Link href="/books/authors" activeClassName="active"><a data-hover="Autorët">Autorët</a></Link>
                     </li> */}
                     <li>
+                        <Link href="/leximi" activeClassName="active"><a data-hover="Si të lexoj?">Si të lexoj? &nbsp;</a></Link>
+                    </li>
+                    <li>
                         <Link href="/kontakti" activeClassName="active"><a data-hover="Kontakti">Kontakti</a></Link>
                     </li>
                 </ul>
