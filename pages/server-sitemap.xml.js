@@ -13,16 +13,16 @@ export async function getServerSideProps(context) {
         .sort({ $natural: -1 })
         .toArray();
 
-    const fields = [
+    const fields =
         books.map(book => (
             {
                 loc: `https://librariadigjitale.co/librat/${book.title}`,
                 lastmod: new Date().toISOString(),
-                changefreq: daily,
+                changefreq: 'daily',
                 priority: 1
             }
         ))
-    ]
+
 
     return getServerSideSitemap(context, fields)
 }
