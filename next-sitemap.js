@@ -1,10 +1,10 @@
 module.exports = {
-  siteUrl: 'localhost:3000',
+  siteUrl: 'https://librariadigjitale.co',
   generateRobotsTxt: true,
   exclude: ['/server-sitemap.xml'], 
   robotsTxtOptions: {
     additionalSitemaps: [
-      'localhost:3000/server-sitemap.xml',
+      'https://librariadigjitale.co/server-sitemap.xml',
     ],
   },
   priority: 1,
