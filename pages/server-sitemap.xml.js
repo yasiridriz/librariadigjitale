@@ -1,26 +1,32 @@
 import { getServerSideSitemap } from 'next-sitemap'
+import clientPromise from '../lib/mongodb';
 
 export async function getServerSideProps(context) {
 
+    const client = await clientPromise;
 
-  const fields = [
-    {
-      loc: 'https://example.com', // Absolute url
-      lastmod: new Date().toISOString(),
-      // changefreq
-      // priority
-    },
-    {
-      loc: 'https://example.com/dynamic-path-2', // Absolute url
-      lastmod: new Date().toISOString(),
-      // changefreq
-      // priority
-    },
-  ]
+    var db = client.db();
 
-  return getServerSideSitemap(context, fields)
+    const books = await db
+        .collection("books")
+        .find({})
+        .sort({ $natural: -1 })
+        .toArray();
+
+    const fields = [
+        books.map(book => (
+            {
+                loc: `https://librariadigjitale.co/librat/${book.title}`,
+                lastmod: new Date().toISOString(),
+                changefreq: daily,
+                priority: 1
+            }
+        ))
+    ]
+
+    return getServerSideSitemap(context, fields)
 }
 
 // Default export to prevent next.js errors
-const ServerSideSitemap = () => {}
+const ServerSideSitemap = () => { }
 export default ServerSideSitemap;
