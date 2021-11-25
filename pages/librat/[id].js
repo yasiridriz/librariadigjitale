@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { motion } from "framer-motion";
+import { contentVariants } from '../../components/motionVariants';
 
 import clientPromise from "../../lib/mongodb";
 
@@ -11,11 +12,11 @@ const ExpandedBook = ({ book }) => {
     const { id } = router.query;
 
     return (
-        <>
+        <motion.div initial="initial" animate="enter" exit="exit" variants={contentVariants} className="container">
             <Head>
                 <title>{book.title} - {book.author}</title>
             </Head>
-            <div id="bookContainer" className="page">
+            <motion.div id="bookContainer" className="page">
                 <div className="row">
                     <div className="col-md-4">
                         <div className="imageContainer">
@@ -45,8 +46,8 @@ const ExpandedBook = ({ book }) => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
+            </motion.div>
+        </motion.div>
     )
 }
 
