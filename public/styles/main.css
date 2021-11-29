@@ -547,12 +547,17 @@ h3 {
     }
 
     .bookContainer.expanded {
-        padding-top: 0;
+        height: 100vh !important;
     }
 
-    /* .bookContainer.expanded .imageContainer, .bookContainer.expanded .imageContainer img {
+    .bookContainer.expanded {
+        padding-top: 0;
+        
+    }
+
+    .bookContainer.expanded .imageContainer, .bookContainer.expanded .imageContainer img {
         display: none;
-    } */
+    }
 
     body {
         padding: 420px 4vw 300px 4vw !important;

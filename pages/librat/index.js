@@ -92,11 +92,11 @@ function ExpandedBook({ book, onCollapse }) {
 }
 
 function CompactBook({ book, onExpand, disabled }) {
-    // href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} Link for no routing
+    //  Link for no routing
     return (
-        <Link key={book.id} href={`/librat/${book.title}`} scroll={false} passHref>
+        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
             {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
-            <motion.div className="col-md-4 compact"  variants={bookVariants}> 
+            <motion.div className="col-md-4 compact"  variants={bookVariants} onClick={disabled ? undefined : onExpand}> 
                 <motion.div className="bookContainer" layoutId={`bookContainer`} >
                     <motion.div layoutId={`book-${book.id}`} className="book" >
                         <motion.div layoutId={`image-${book.id}`} className="imageContainer">
