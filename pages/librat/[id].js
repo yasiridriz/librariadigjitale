@@ -18,12 +18,12 @@ const ExpandedBook = ({ book }) => {
                     {book.author} - {book.title} | Libraria Digjitale
                 </title>
                 <meta property="og:url" content={`https://librariadigjitale.co/librat/${book.title}`} />
-                <meta property="og:type" content="website" />
+                <meta property="og:type" content="article" />
                 <meta
                     property="og:title"
                     content={`${book.author} - ${book.title} | Libraria Digjitale`}
                 />
-                <meta name="twitter:card" content={`Shkarko librin ${book.title} nga ${book.author} në formatin EPUB dhe PDF. `} />
+                <meta name="twitter:card" content={`summary_large_image`} />
                 <meta
                     property="og:description"
                     content={`Shkarko librin ${book.title} nga ${book.author} në formatin EPUB dhe PDF. `}
