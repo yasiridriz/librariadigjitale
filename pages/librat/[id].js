@@ -14,7 +14,21 @@ const ExpandedBook = ({ book }) => {
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={contentVariants} className="container">
             <Head>
-                <title>{book.title} - {book.author}</title>
+                <title>
+                    {book.author} - {book.title} | Libraria Digjitale
+                </title>
+                <meta property="og:url" content={`https://librariadigjitale.co/librat/${book.title}`} />
+                <meta property="og:type" content="website" />
+                <meta
+                    property="og:title"
+                    content={`${book.author} - ${book.title} | Libraria Digjitale`}
+                />
+                <meta name="twitter:card" content={`Shkarko librin ${book.title} nga ${book.author} në formatin EPUB dhe PDF. `} />
+                <meta
+                    property="og:description"
+                    content={`Shkarko librin ${book.title} nga ${book.author} në formatin EPUB dhe PDF. `}
+                />
+                <meta property="og:image" content={book.image} />
             </Head>
             <motion.div id="bookContainer" className="page">
                 <div className="row">

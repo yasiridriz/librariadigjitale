@@ -24,6 +24,21 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <title>
+            Libraria Digjitale 
+          </title>
+          <meta property="og:url" content="https://librariadigjitale.co/" />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Libraria Digjitale"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            property="og:description"
+            content="Burimi më i madh i librave digjitale në gjuhën Shqipe."
+          />
+          {/* <meta property="og:image" content={"url of image"} /> */}
         </Head>
         <body>
           <Main />
