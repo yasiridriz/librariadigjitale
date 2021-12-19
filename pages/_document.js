@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
             property="og:description"
             content="Burimi më i madh i librave digjitale në gjuhën Shqipe."
           />
-          {/* <meta property="og:image" content={"url of image"} /> */}
+          <meta property="og:image" content="https://i.postimg.cc/G2dtq6bP/logo.png" />
         </Head>
         <body>
           <Main />

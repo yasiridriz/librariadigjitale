@@ -167,6 +167,23 @@ const Books = ({ books }) => {
 
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
+            <Head>
+                <title>
+                    Të gjitha librat | Libraria Digjitale
+                </title>
+                <meta property="og:url" content={`https://librariadigjitale.co/librat/`} />
+                <meta property="og:type" content="article" />
+                <meta
+                    property="og:title"
+                    content={`Të gjitha librat | Libraria Digjitale`}
+                />
+                <meta name="twitter:card" content={`summary_large_image`} />
+                <meta
+                    property="og:description"
+                    content={`Shkarko libra shqip në formatin EPUB dhe PDF nga libraria më e madhe digjitale. `}
+                />
+                <meta property="og:image" content="https://i.postimg.cc/G2dtq6bP/logo.png" />
+            </Head>
             <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Të Gjitha Librat</span></motion.h1>
             {/* search */}
             <motion.div variants={titleVariants} className="search">
