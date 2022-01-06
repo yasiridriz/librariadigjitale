@@ -1,23 +1,19 @@
-import { useState, useLayoutEffect, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Link from 'next/link';
 
 import Head from 'next/head';
 
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-import { titleVariants, contentVariants, bookVariants } from '../../components/motionVariants';
-
 import clientPromise from "../../lib/mongodb"; // mongo client
 
-// hook to stop body from scrolling when book is expanded
-function useLockBodyScroll() {
-    useLayoutEffect(() => {
-        const originalStyle = window.getComputedStyle(document.body).overflow;
-        document.body.style.overflow = "hidden";
+// // hook to stop body from scrolling when book is expanded
+// function useLockBodyScroll() {
+//     useLayoutEffect(() => {
+//         const originalStyle = window.getComputedStyle(document.body).overflow;
+//         document.body.style.overflow = "hidden";
 
-        return () => (document.body.style.overflow = originalStyle); // go back to scroll
-    }, []);
-}
+//         return () => (document.body.style.overflow = originalStyle); // go back to scroll
+//     }, []);
+// }
 
 
 function ExpandedBook({ book, onCollapse }) {
@@ -32,61 +28,59 @@ function ExpandedBook({ book, onCollapse }) {
             <Head>
                 <title>{book.title} - {book.author}</title>
             </Head>
-            <motion.div
+            {/* <div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, delay: 0.1 }}
                 className="overlay"
             >
-            </motion.div>
-            <motion.div layoutId={`bookContainer`} id="bookContainer" className="bookContainer expanded">
+            </div> */}
+            <div id="bookContainer" className="bookContainer expanded">
                 <div className="container-fluid px-0">
                     <div className="row justify-content-center no-gutters">
-                        <motion.div layoutId={`book-${book.id}`} className="book col-xl-8 col-md-12">
+                        <div className="book col-xl-8 col-md-12">
                             <div className="row no-gutters">
                                 <div className="col-md-4">
-                                    <motion.div layoutId={`image-${book.id}`} className="imageContainer">
+                                    <div className="imageContainer">
                                         <img src={book.image} />
-                                    </motion.div>
+                                    </div>
                                 </div>
                                 <div className="col-md-8">
-                                    <AnimatePresence exitBeforeEnter>
-                                        <motion.div initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{ duration: 0.2, delay: 0.25 }} className="details" key="details">
-                                            <Link href="/librat/" scroll={false}><span className="close" onClick={onCollapse}></span></Link>
-                                            <h1>{book.title}</h1>
-                                            <p>Nga {book.author}</p>
-                                            <motion.div className="description">
-                                                <p>
-                                                    {truncate(book.description, 250)}
-                                                    <br /><br />
-                                                    <Link href="/librat/[id].js" as={`/librat/${book.title}`}><a>Lexo më shumë <span className="shift"> &rarr; </span></a></Link>
-                                                </p>
-                                                <hr />
-                                                <div className="links">
-                                                    <p> Shkarko: </p>
-                                                    {book.links.map(link => (
-                                                        <a target="_blank" download href={link.link} className="btn-main noborder" >
-                                                            {link.type} {book.publisher !== "" ? `në ${book.publisher}` : ""}
-                                                        </a>
-                                                    ))}
 
-                                                </div>
+                                    <div initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.2, delay: 0.25 }} className="details" key="details">
+                                        <Link href="/librat/" scroll={false}><span className="close" onClick={onCollapse}></span></Link>
+                                        <h1>{book.title}</h1>
+                                        <p>Nga {book.author}</p>
+                                        <div className="description">
+                                            <p>
+                                                {truncate(book.description, 250)}
+                                                <br /><br />
+                                                <Link href="/librat/[id].js" as={`/librat/${book.title}`}><a>Lexo më shumë <span className="shift"> &rarr; </span></a></Link>
+                                            </p>
+                                            <hr />
+                                            <div className="links">
+                                                <p> Shkarko: </p>
+                                                {book.links.map(link => (
+                                                    <a target="_blank" download href={link.link} className="btn-main noborder" >
+                                                        {link.type} {book.publisher !== "" ? `në ${book.publisher}` : ""}
+                                                    </a>
+                                                ))}
 
-                                            </motion.div>
-                                        </motion.div>
-                                    </AnimatePresence>
+                                            </div>
 
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
 
-            </motion.div>
+            </div>
         </>
     )
 }
@@ -96,19 +90,19 @@ function CompactBook({ book, onExpand, disabled }) {
     return (
         <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
             {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
-            <motion.div className="col-md-4 compact"  variants={bookVariants} onClick={disabled ? undefined : onExpand}> 
-                <motion.div className="bookContainer" layoutId={`bookContainer`} >
-                    <motion.div layoutId={`book-${book.id}`} className="book" >
-                        <motion.div layoutId={`image-${book.id}`} className="imageContainer">
+            <div className="col-md-4 compact">
+                <div className="bookContainer" layoutId={`bookContainer`} >
+                    <div layoutId={`book-${book.id}`} className="book" >
+                        <div layoutId={`image-${book.id}`} className="imageContainer">
                             <img src={book.image} />
-                        </motion.div>
-                        {/* <motion.div layoutId={`details-${book.id}`} className="details">
+                        </div>
+                        {/* <div layoutId={`details-${book.id}`} className="details">
                         <h2>{book.title}</h2>
                         <p>{book.author}</p>
-                    </motion.div> */}
-                    </motion.div>
-                </motion.div>
-            </motion.div>
+                    </div> */}
+                    </div>
+                </div>
+            </div>
         </Link>
     );
 }
@@ -128,15 +122,32 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
     };
 
     return (
-        <AnimateSharedLayout type="crossfade">
-            {isExpanded ? (
-                <ExpandedBook onCollapse={collapse} book={book}>
-                </ExpandedBook>
-            ) : (
-                <CompactBook onExpand={expand} disabled={disabled} book={book}>
-                </CompactBook>
-            )}
-        </AnimateSharedLayout>
+        // <AnimateSharedLayout type="crossfade">
+        //     {isExpanded ? (
+        //         <ExpandedBook onCollapse={collapse} book={book}>
+        //         </ExpandedBook>
+        //     ) : (
+        //         <CompactBook onExpand={expand} disabled={disabled} book={book}>
+        //         </CompactBook>
+        //     )}
+        // </AnimateSharedLayout>
+        //         <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
+        <Link key={book.id} href={`/librat/[id]`} as={`/librat/${book.title}`} passHref>
+            {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
+            <div className="col-md-4 compact">
+                <div className="bookContainer" layoutId={`bookContainer`} >
+                    <div layoutId={`book-${book.id}`} className="book" >
+                        <div layoutId={`image-${book.id}`} className="imageContainer">
+                            <img src={book.image} />
+                        </div>
+                        {/* <div layoutId={`details-${book.id}`} className="details">
+                        <h2>{book.title}</h2>
+                        <p>{book.author}</p>
+                    </div> */}
+                    </div>
+                </div>
+            </div>
+        </Link>
     )
 }
 
@@ -166,7 +177,7 @@ const Books = ({ books }) => {
 
 
     return (
-        <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="container">
+        <div className="container">
             <Head>
                 <title>
                     Të gjitha librat | Libraria Digjitale
@@ -184,9 +195,13 @@ const Books = ({ books }) => {
                 />
                 <meta property="og:image" content="https://i.postimg.cc/G2dtq6bP/logo.png" />
             </Head>
-            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Të Gjitha Librat</span></motion.h1>
+
+            <h1 className="bigtitle"><span>Të Gjitha Librat</span></h1>
+
+            {/* <h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Të Gjitha Librat</span></h1> */}
+
             {/* search */}
-            <motion.div variants={titleVariants} className="search">
+            <div className="search">
                 <div className="group">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="30" height="45" viewBox="0 0 24 24" strokeWidth="1" stroke="#bbb" fill="none" strokeLinecap="square" strokeLinejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -202,7 +217,7 @@ const Books = ({ books }) => {
                         </svg>
                     </span>
                 </div>
-            </motion.div>
+            </div>
 
 
             <div className="row">
@@ -216,7 +231,7 @@ const Books = ({ books }) => {
                     />
                 ))}
             </div>
-        </motion.div >
+        </div >
     )
 }
 

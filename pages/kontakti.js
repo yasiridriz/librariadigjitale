@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { titleVariants, contentVariants } from '../components/motionVariants';
 
 const Contact = () => {
 
@@ -26,13 +24,13 @@ const Contact = () => {
     // };
 
     return (
-        <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="box">
-            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="title">Kontakti</motion.h1>
-            <motion.p variants={contentVariants}>
+        <div className="box">
+            <h1 className="title">Kontakti</h1>
+            <p>
                 Nëse keni ndonjë ankesë apo kërkesë në lidhje me uebsajtin, na dërgoni një mesazh në adresën <a
                     href="mailto:librariadigjitale@gmail.com">librariadigjitale@gmail.com</a> apo prej Twitter: <a href="https:/twitter.com/libradigjitale">Libraria Digjitale</a>.
-            </motion.p>
-            {/* <motion.div variants={contentVariants} className="row">
+            </p>
+            {/* <div variants={contentVariants} className="row">
                 <div className="form-box col-md-12">
                     {/* <form method="POST" action="/contact" className="form-box">
                         <div className="group">
@@ -57,9 +55,9 @@ const Contact = () => {
                         </div>
                     </form> 
                 </div>
-            </motion.div> */}
+            </div> */}
 
-        </motion.div>
+        </div>
     );
 }
 

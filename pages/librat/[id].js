@@ -2,17 +2,11 @@ import { useRouter } from "next/router";
 
 import Head from "next/head";
 
-import { motion } from "framer-motion";
-import { contentVariants } from '../../components/motionVariants';
-
 import clientPromise from "../../lib/mongodb";
 
 const ExpandedBook = ({ book }) => {
-    const router = useRouter();
-    const { id } = router.query;
-
     return (
-        <motion.div initial="initial" animate="enter" exit="exit" variants={contentVariants} className="container">
+        <div className="container">
             <Head>
                 <title>
                     {book.author} - {book.title} | Libraria Digjitale
@@ -30,7 +24,7 @@ const ExpandedBook = ({ book }) => {
                 />
                 <meta property="og:image" content={book.image} />
             </Head>
-            <motion.div id="bookContainer" className="page">
+            <div id="bookContainer" className="page">
                 <div className="row">
                     <div className="col-md-4">
                         <div className="imageContainer">
@@ -60,8 +54,8 @@ const ExpandedBook = ({ book }) => {
                         </div>
                     </div>
                 </div>
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 }
 

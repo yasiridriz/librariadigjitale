@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { titleVariants, contentVariants } from '../components/motionVariants';
-
 const Leximi = () => {
     return (
-        <motion.div initial="initial" animate="enter" exit="exit" variants={titleVariants} className="box">
-            <motion.h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="title">Si të lexoj?</motion.h1>
-            <motion.p variants={contentVariants}>
+        <div className="box">
+            <h1 className="title">Si të lexoj?</h1>
+            <p>
                 <div className="row justify-content-between">
                     <div className="col-md-6">
                         <h2>
@@ -69,8 +65,8 @@ const Leximi = () => {
                         </p>
                     </div> */}
                 </div>
-            </motion.p>
-        </motion.div>
+            </p>
+        </div>
     );
 }
 
