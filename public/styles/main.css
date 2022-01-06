@@ -23,6 +23,7 @@ html {
     z-index: -2;
     padding: 0;
     margin: 0;
+    font-display: fallback;
 }
 
 body {
