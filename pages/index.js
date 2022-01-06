@@ -33,7 +33,7 @@ const Home = ({ books }) => {
               <div className="col-md-4 bookContainer" style={{ "marginBottom": "2em" }}>
                 <div className="book">
                   <div className="imageContainer">
-                    <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkkAQAAB8AG7jymN8AAAAASUVORK5CYII=' />
+                    <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkkAQAAB8AG7jymN8AAAAASUVORK5CYII=' alt={`Kopertina - ${book.title}`} />
                   </div>
                   {/* <div className="details">
                     <h2>{book.title}</h2>
