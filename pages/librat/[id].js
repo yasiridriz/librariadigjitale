@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-
+import Image from 'next/image';
 import Head from "next/head";
 
 import clientPromise from "../../lib/mongodb";
@@ -28,7 +27,7 @@ const ExpandedBook = ({ book }) => {
                 <div className="row">
                     <div className="col-md-4">
                         <div className="imageContainer">
-                            <img src={book.image} />
+                            <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAE0lEQVR42mP8d5XhPwMaYKSBIABZAw4g3SrXdwAAAABJRU5ErkJggg==' />
                         </div>
                     </div>
                     <div className="col-md-8">

@@ -436,7 +436,7 @@ h3 {
     overflow-y: scroll;
     left: 0;
     top: 0;
-
+    border: 1px inset solid black;
 }
 .book .imageContainer::-webkit-scrollbar, .book::-webkit-scrollbar, .bookContainer::-webkit-scrollbar {
     display: none;

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Image from 'next/image';
 import clientPromise from '../lib/mongodb';
 
 const Home = ({ books }) => {
@@ -33,7 +33,7 @@ const Home = ({ books }) => {
               <div className="col-md-4 bookContainer" style={{ "marginBottom": "2em" }}>
                 <div className="book">
                   <div className="imageContainer">
-                    <img src={book.image} />
+                    <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAE0lEQVR42mP8d5XhPwMaYKSBIABZAw4g3SrXdwAAAABJRU5ErkJggg==' />
                   </div>
                   {/* <div className="details">
                     <h2>{book.title}</h2>
