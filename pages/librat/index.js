@@ -139,7 +139,7 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
                 <div className="bookContainer" >
                     <div className="book" >
                         <div className="imageContainer">
-                            <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAE0lEQVR42mP8d5XhPwMaYKSBIABZAw4g3SrXdwAAAABJRU5ErkJggg==' />
+                            <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkkAQAAB8AG7jymN8AAAAASUVORK5CYII=' />
                         </div>
                         {/* <div className="details">
                         <h2>{book.title}</h2>

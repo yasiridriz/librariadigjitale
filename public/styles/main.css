@@ -55,10 +55,11 @@ hr {
 }
 
 p {
-    font-family: 'Argent CF';
+    font-family: 'Argent CF', serif;
     font-size: 1.3rem;
     font-weight: 100;
     color: #000;
+    font-display: fallback;
 }
 
 a {
@@ -524,9 +525,10 @@ h3 {
 
 .bookContainer.expanded .book .description p,
 .thisweek .book .description p {
-    font-family: 'Argent CF';
+    font-family: 'Argent CF', serif;
     font-size: 1.1rem;
     font-weight: 100;
+    font-display: fallback;
 }
 
 .search {
