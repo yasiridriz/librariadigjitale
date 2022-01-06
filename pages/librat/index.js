@@ -51,7 +51,7 @@ function ExpandedBook({ book, onCollapse }) {
                                     <div initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.2, delay: 0.25 }} className="details" key="details">
+                                        transition={{ duration: 0.2, delay: 0.25 }} className="details">
                                         <Link href="/librat/" scroll={false}><span className="close" onClick={onCollapse}></span></Link>
                                         <h1>{book.title}</h1>
                                         <p>Nga {book.author}</p>
@@ -79,7 +79,6 @@ function ExpandedBook({ book, onCollapse }) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     )
@@ -88,15 +87,15 @@ function ExpandedBook({ book, onCollapse }) {
 function CompactBook({ book, onExpand, disabled }) {
     //  Link for no routing
     return (
-        <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
+        <Link href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
             {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
             <div className="col-md-4 compact">
-                <div className="bookContainer" layoutId={`bookContainer`} >
-                    <div layoutId={`book-${book.id}`} className="book" >
-                        <div layoutId={`image-${book.id}`} className="imageContainer">
+                <div className="bookContainer" >
+                    <div className="book" >
+                        <div className="imageContainer">
                             <img src={book.image} />
                         </div>
-                        {/* <div layoutId={`details-${book.id}`} className="details">
+                        {/* <div className="details">
                         <h2>{book.title}</h2>
                         <p>{book.author}</p>
                     </div> */}
@@ -132,15 +131,15 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
         //     )}
         // </AnimateSharedLayout>
         //         <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
-        <Link key={book.id} href={`/librat/[id]`} as={`/librat/${book.title}`} passHref>
+        <Link href={`/librat/[id]`} as={`/librat/${book.title}`} passHref>
             {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
             <div className="col-md-4 compact">
-                <div className="bookContainer" layoutId={`bookContainer`} >
-                    <div layoutId={`book-${book.id}`} className="book" >
-                        <div layoutId={`image-${book.id}`} className="imageContainer">
+                <div className="bookContainer" >
+                    <div className="book" >
+                        <div className="imageContainer">
                             <img src={book.image} />
                         </div>
-                        {/* <div layoutId={`details-${book.id}`} className="details">
+                        {/* <div className="details">
                         <h2>{book.title}</h2>
                         <p>{book.author}</p>
                     </div> */}
@@ -223,7 +222,7 @@ const Books = ({ books }) => {
             <div className="row">
                 {filteredList.map(book => (
                     <Book
-                        key={book}
+                        key={`book-${book._id}`}
                         book={book}
                         disabled={expandedBook !== book && expandedBook !== undefined}
                         onExpand={() => setCollapsedBook(book)}

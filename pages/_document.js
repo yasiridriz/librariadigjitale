@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-
+import Script from 'next/script';
 import { GA_TRACKING_ID } from '../lib/gtag'
 
 export default class MyDocument extends Document {
@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
-          <script
+          <Script
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
@@ -24,21 +24,19 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <title>
-            Libraria Digjitale 
-          </title>
-          <meta property="og:url" content="https://librariadigjitale.co/" />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:title"
-            content="Libraria Digjitale"
-          />
-          <meta name="twitter:card" content="summary" />
-          <meta
-            property="og:description"
-            content="Burimi më i madh i librave digjitale në gjuhën Shqipe."
-          />
-          <meta property="og:image" content="https://i.postimg.cc/G2dtq6bP/logo.png" />
+          {/* Fonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
+          <link rel='stylesheet' href="/ArgentCF-Thin/style.css" />
+
+          {/* Global Styles */}
+          <link rel='stylesheet' href="/styles/main.css" />
+          <link rel='stylesheet' href="/styles/nprogress.css" />
+          <link rel="stylesheet" type="text/css" media="screen" href="/styles/main.css" />
+          <link rel="stylesheet" href="/styles/bootstrap/bootstrap-grid.min.css" />
+          <link rel='stylesheet' media='screen' type='text/css' href="/styles/forms.css" />
+
         </Head>
         <body>
           <Main />
