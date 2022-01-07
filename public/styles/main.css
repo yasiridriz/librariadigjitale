@@ -57,11 +57,11 @@ hr {
 }
 
 p {
+    font-display: fallback;
     font-family: 'Argent CF', serif;
     font-size: 1.3rem;
     font-weight: 100;
     color: #000;
-    font-display: fallback;
 }
 
 a {
