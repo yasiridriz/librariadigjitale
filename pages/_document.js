@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
       <Html lang='sq'>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
+          <Script
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];

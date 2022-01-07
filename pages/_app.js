@@ -2,6 +2,8 @@ import Layout from '../components/layout';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
+import { AnimatePresence } from 'framer-motion';
+
 
 NProgress.configure({ ease: 'ease-out', speed: 500 })
 Router.events.on('routeChangeStart', () => {
@@ -20,7 +22,9 @@ Router.events.on('routeChangeError', () => {
 function Libraria({ Component, pageProps, router }) {
   return (
     <Layout>
-      <Component {...pageProps} key={router.route} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
     </Layout>
   )
 }

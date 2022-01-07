@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Head from "next/head";
 
+import { motion } from 'framer-motion';
+import { container, content } from '../../lib/motion/variants';
+
 import clientPromise from "../../lib/mongodb";
 
-const ExpandedBook = ({ book }) => {
+const Book = ({ book }) => {
     return (
-        <div className="container">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={container} className="container">
             <Head>
                 <title>
                     {book.author} - {book.title} | Libraria Digjitale
@@ -25,12 +28,12 @@ const ExpandedBook = ({ book }) => {
             </Head>
             <div id="bookContainer" className="page">
                 <div className="row">
-                    <div className="col-md-4">
+                    <motion.div variants={content} className="col-md-4">
                         <div className="imageContainer">
                             <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkkAQAAB8AG7jymN8AAAAASUVORK5CYII=' />
                         </div>
-                    </div>
-                    <div className="col-md-8">
+                    </motion.div>
+                    <motion.div variants={content} className="col-md-8">
                         <div className="details" key="details">
                             <h1>{book.title}</h1>
                             <p>Nga {book.author}</p>
@@ -51,14 +54,14 @@ const ExpandedBook = ({ book }) => {
 
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
-export default ExpandedBook;
+export default Book;
 
 export async function getServerSideProps(context) {
     const client = await clientPromise;

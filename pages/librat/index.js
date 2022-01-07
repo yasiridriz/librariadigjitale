@@ -5,7 +5,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import Search from '../../components/layout/search';
+
 import clientPromise from "../../lib/mongodb"; // mongo client
+
+import { motion } from 'framer-motion';
+import { container, content } from '../../lib/motion/variants';
 
 // // hook to stop body from scrolling when book is expanded
 // function useLockBodyScroll() {
@@ -135,19 +139,15 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
         //         <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
         <Link href={`/librat/[id]`} as={`/librat/${book.title}`} passHref>
             {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
-            <div className="col-md-4 compact">
+            <motion.div variants={content} className="col-md-4 compact">
                 <div className="bookContainer" >
                     <div className="book" >
                         <div className="imageContainer">
                             <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkkAQAAB8AG7jymN8AAAAASUVORK5CYII=' />
                         </div>
-                        {/* <div className="details">
-                        <h2>{book.title}</h2>
-                        <p>{book.author}</p>
-                    </div> */}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </Link>
     )
 }
@@ -178,7 +178,7 @@ const Books = ({ books }) => {
 
 
     return (
-        <div className="container">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={container} className="container">
             <Head>
                 <title>
                     Të gjitha librat | Libraria Digjitale
@@ -197,7 +197,7 @@ const Books = ({ books }) => {
                 <meta property="og:image" content="https://i.postimg.cc/G2dtq6bP/logo.png" />
             </Head>
 
-            <h1 className="bigtitle"><span>Të Gjitha Librat</span></h1>
+            <motion.h1 variants={content} className="bigtitle"><span>Të Gjitha Librat</span></motion.h1>
 
             {/* <h1 initial="initial" animate="enter" exit="exit" variants={titleVariants} className="bigtitle"><span>Të Gjitha Librat</span></h1> */}
 
@@ -216,7 +216,7 @@ const Books = ({ books }) => {
                     />
                 ))}
             </div>
-        </div >
+        </motion.div>
     )
 }
 

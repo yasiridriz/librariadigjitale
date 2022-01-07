@@ -1,9 +1,12 @@
+import { motion } from 'framer-motion';
+import { container, content } from '../lib/motion/variants';
+
 const Leximi = () => {
     return (
-        <div className="box">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={container}  className="box">
             <h1 className="title">Si të lexoj?</h1>
             <div className="row justify-content-between">
-                <div className="col-md-6">
+                <motion.div variants={content} className="col-md-6">
                     <h2>
                         Windows dhe Mac kompjuterët
                     </h2>
@@ -23,8 +26,8 @@ const Leximi = () => {
                             <a href="https://www.apple.com/apple-books/" target="_blank">Apple Books (Mac)</a>
                         </li>
                     </ul>
-                </div>
-                <div className="col-md-6">
+                </motion.div>
+                <motion.div variants={content} className="col-md-6">
                     <h2>
                         iOS dhe Android
                     </h2>
@@ -40,9 +43,9 @@ const Leximi = () => {
                             <a href="https://apps.apple.com/us/app/apple-books/id364709193" target="_blank">Apple Books (iOS)</a>
                         </li>
                     </ul>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

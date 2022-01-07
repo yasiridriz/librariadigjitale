@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^5.5.5",
     "mongodb": "^4.2.2",
     "next": "^11.1.0",
     "next-sitemap": "^1.6.179",
