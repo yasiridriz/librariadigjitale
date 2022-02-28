@@ -137,11 +137,11 @@ const Book = ({ book, onCollapse, onExpand, disabled }) => {
         //     )}
         // </AnimateSharedLayout>
         //         <Link key={book.id} href={`/librat/?book=${book.title}`} as={`/librat/${book.title}`} scroll={false} passHref>
-        <Link href={`/librat/[id]`} as={`/librat/${book.title}`} passHref>
+        <Link href={`/librat/[slug]`} as={`/librat/${book.slug}`} passHref>
             {/* onClick={disabled ? undefined : onExpand} --> FOR FRAMER CARD EXPAND ANIMATION */}
             <motion.div variants={content} className="col-md-4 compact">
-                <div className="bookContainer" >
-                    <div className="book" >
+                <div className="bookContainer">
+                    <div className="book">
                         <div className="imageContainer">
                             <Image src={book.image} quality={100} width={2564} height={4000} placeholder='blur' blurDataURL='data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkkAQAAB8AG7jymN8AAAAASUVORK5CYII=' />
                         </div>
@@ -208,7 +208,7 @@ const Books = ({ books }) => {
             <div className="row">
                 {filteredList.map(book => (
                     <Book
-                        key={`book-${book._id}`}
+                        key={book.title}
                         book={book}
                         disabled={expandedBook !== book && expandedBook !== undefined}
                         onExpand={() => setCollapsedBook(book)}
@@ -221,7 +221,7 @@ const Books = ({ books }) => {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
     const client = await clientPromise;
 
     var db = client.db();
@@ -231,10 +231,12 @@ export async function getServerSideProps(context) {
         .find({})
         .sort({ $natural: -1 })
         .toArray();
+
     return {
         props: {
             books: JSON.parse(JSON.stringify(books)),
         },
+        revalidate: 60 * 60 * 12
     };
 }
 

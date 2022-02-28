@@ -6,7 +6,7 @@ import { container, content } from '../../lib/motion/variants';
 
 import clientPromise from "../../lib/mongodb";
 
-const Book = ({ book }) => {
+export default function Book({ book }) {
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={container} className="container">
             <Head>
@@ -25,6 +25,8 @@ const Book = ({ book }) => {
                     content={`Shkarko librin ${book.title} nga ${book.author} në formatin EPUB dhe PDF. `}
                 />
                 <meta property="og:image" content={book.image} />
+                <link rel="preload" as='font' href="/ArgentCF-Thin/style.css" />
+                <link rel='stylesheet' href="/ArgentCF-Thin/style.css" />
             </Head>
             <div id="bookContainer" className="page">
                 <div className="row">
@@ -61,16 +63,34 @@ const Book = ({ book }) => {
     )
 }
 
-export default Book;
-
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
     const client = await clientPromise;
 
     var db = client.db();
 
     const books = await db
         .collection("books")
-        .find({ title: context.query.id })
+        .find()
+        .toArray();
+
+    const paths = books.map((book) => ({
+        params: { slug: book.slug },
+    }))
+
+    return {
+        paths: paths,
+        fallback: false
+    }
+}
+
+export async function getStaticProps({ params }) {
+    const client = await clientPromise;
+
+    var db = client.db();
+
+    const books = await db
+        .collection("books")
+        .find({ slug: params.slug })
         .toArray();
     return {
         props: {
