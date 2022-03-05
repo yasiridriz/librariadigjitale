@@ -6,7 +6,7 @@ const Footer = () => {
                 &nbsp; Libraria Digjitale
             </a>
             <br /><br />
-            © 2021 Të gjitha të drejtat e rezervuara
+            © 2022 Të gjitha të drejtat e rezervuara
         </footer>
     )
 }
