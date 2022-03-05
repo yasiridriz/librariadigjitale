@@ -33,7 +33,7 @@ const Home = ({ books }) => {
 
         <motion.div variants={content} className="row">
           {books.map(book => (
-            <Link key={`book-${book._id}`} href={`/librat/[id]`} as={`/librat/${book.title}`} passHref scroll={false}>
+            <Link key={`book-${book._id}`} href={`/librat/[id]`} as={`/librat/${book.slug}`} passHref scroll={false}>
               <div className="col-md-4 bookContainer" style={{ "marginBottom": "2em" }}>
                 <div className="book">
                   <div className="imageContainer">
