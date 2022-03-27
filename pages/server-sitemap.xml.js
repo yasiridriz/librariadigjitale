@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
     const fields =
         books.map(book => (
             {
-                loc: `https://librariadigjitale.co/librat/${book.title}`,
+                loc: `https://librariadigjitale.co/librat/${book.slug}`,
                 lastmod: new Date().toISOString(),
                 changefreq: 'daily',
                 priority: 1

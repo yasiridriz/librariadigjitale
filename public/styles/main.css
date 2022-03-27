@@ -183,6 +183,7 @@ h3 {
     max-height: 0;
     color: #000;
     content: attr(data-hover);
+    white-space: nowrap;
     -webkit-transition: max-height 0.5s;
     -moz-transition: max-height 0.5s;
     transition: max-height 0.5s;
